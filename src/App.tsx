@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsxImportSource theme-ui */
+
+import { Flex, Grid } from "theme-ui";
+import Button from "./Button/Button";
+import MainHeading from "./Typography/MainHeading";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Flex sx={{height:'100%'}}>
+      <Flex margin="auto" sx={{flexDirection:"column"}}>
+        <MainHeading sx={{mb:'5rem'}}>Fretboard Workout</MainHeading>
+        <Grid sx={{justifyContent:"center"}}>
+          <Button sx={{fontSize:"2rem"}}>Find node mode</Button>
+          <Button  secondary sx={{fontSize:"2rem"}}>Guess node mode</Button>
+        </Grid>
+      </Flex>
+    </Flex>
   );
 }
 
