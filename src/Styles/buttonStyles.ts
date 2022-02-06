@@ -20,10 +20,7 @@ export const buttonStyles: ThemeUIStyleObject = {
 
 export const btnStyles = {
   primary: {
-    ...buttonStyles,
-    '&:hover': {
-      color:'white'
-    }
+    ...buttonStyles
   },
   secondary: {
     ...buttonStyles,
@@ -31,3 +28,5 @@ export const btnStyles = {
     color: "white",
   }
 }
+
+

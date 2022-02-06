@@ -10,7 +10,7 @@ const MainHeading: React.FunctionComponent<IMainHeadingProps & SxProp> = ({child
     textTransform:'uppercase',
     mb:['2',null,'3'],
     fontSize:["2.5rem","3.5rem","5rem","7em","9rem"],
-    letterSpacing:[".4rem",null,"1.2rem","1.7rem"]
+    letterSpacing:[".5rem",null,"1.2rem","1.7rem"]
   }}
   {...rest}
   >{children}</Heading>;
