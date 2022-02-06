@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "theme-ui";
-import Home from "./Home";
+import Home from "./Pages/Home";
 import reportWebVitals from "./reportWebVitals";
 import { theme } from "./Styles/theme";
 import "./index.css";

@@ -20,7 +20,8 @@
       },
       styles: {
         root:{
-          lineHeight:'1.6'
+          lineHeight:'1.6',
+          fontSize:'62.5%',
         },
         a: btnStyles.primary
       }

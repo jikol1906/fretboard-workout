@@ -2,6 +2,7 @@ import { ThemeUIStyleObject } from 'theme-ui';
 
 export const buttonStyles: ThemeUIStyleObject = {
   padding: "0.6em 1.7em",
+  outline: "none",
   textAlign:'center',
   letterSpacing:"2px",
   cursor: "pointer",
@@ -20,7 +21,11 @@ export const buttonStyles: ThemeUIStyleObject = {
 
 export const btnStyles = {
   primary: {
-    ...buttonStyles
+    ...buttonStyles,
+    '&:hover,&:focus':{
+      bg:'text',
+      color:'white'
+    }
   },
   secondary: {
     ...buttonStyles,
