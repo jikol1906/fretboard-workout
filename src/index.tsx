@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'theme-ui';
-import App from './App';
+import Home from './Home';
 import reportWebVitals from './reportWebVitals';
-import { theme } from './theme';
+import { theme } from './Styles/theme';
 import './index.css'
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
