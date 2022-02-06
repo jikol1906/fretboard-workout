@@ -12,7 +12,7 @@ function Home() {
       <Box margin="auto">
         <MainHeading>Fretboard Workout</MainHeading>
         <Grid gap={["1", null, "2"]} sx={{ justifyContent: "center" }}>
-          <NavLink to="test" sx={btnStyles.primary}>Find node practice</NavLink>
+          <NavLink to="fretboard" sx={btnStyles.primary}>Find node practice</NavLink>
           <NavLink to="test" sx={btnStyles.secondary}>Guess node practie</NavLink>
         </Grid>
       </Box>
