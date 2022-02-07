@@ -7,7 +7,7 @@ interface IGuessNoteProps {}
 
 const GuessNote: React.FunctionComponent<IGuessNoteProps> = (props) => {
   return (
-    <Grid sx={{ 
+    <Grid gap="0" sx={{ 
       height: "100%",
       gridTemplateRows:"1fr 1fr"
     }}>

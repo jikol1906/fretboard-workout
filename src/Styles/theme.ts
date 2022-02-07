@@ -11,11 +11,20 @@
       },
       breakpoints:["31.25em", "46.5em", "65.625em", "90em"],
       buttons:btnStyles,
-      space:["0","1.2rem","2.5rem","5rem"],
+      space:["0","1.3rem","2.8rem","5rem"],
       links:{secondary:btnStyles.secondary},  
       text: {
         heading: {
           fontFamily:'main'
+        }
+      },
+      forms: {
+        label:{
+          fontFamily: 'main',
+          textTransform:'uppercase',
+          letterSpacing:2,
+          fontSize:["1.6rem",null,"2.5rem"],
+          width: "auto"
         }
       },
       styles: {
