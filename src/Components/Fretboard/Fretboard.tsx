@@ -20,10 +20,6 @@ const Fretboard: React.FunctionComponent = (props) => {
     return <div sx={pointerStyles} style={position} key={`${x}${y}`} />;
   });
 
-  useEffect(() => {
-    dispatch(setPointers([[2, 2]]));
-  },[])
-
   const styles = { "--rotation": rotation } as React.CSSProperties;
 
   return (
@@ -33,6 +29,7 @@ const Fretboard: React.FunctionComponent = (props) => {
         height:"16em",
         fontSize:"min(1.4vw,1.6rem)",
       }}
+      style={styles}
     >
       <Box
         sx={{

@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Grid} from "theme-ui";
 import Fretboard from "../Components/Fretboard/Fretboard";
+import GuessNoteMenu from "../Components/GuessNoteMenu/GuessNoteMenu";
 
 interface IGuessNoteProps {}
 
@@ -11,6 +12,7 @@ const GuessNote: React.FunctionComponent<IGuessNoteProps> = (props) => {
       gridTemplateRows:"1fr 1fr"
     }}>
       <Fretboard />
+      <GuessNoteMenu/>
     </Grid>
   );
 };
