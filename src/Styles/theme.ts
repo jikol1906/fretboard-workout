@@ -12,8 +12,11 @@
       breakpoints:["31.25em", "46.5em", "65.625em", "90em"],
       buttons:btnStyles,
       space:["0","1.3rem","2.8rem","5rem"],
-      links:{secondary:btnStyles.secondary},  
       text: {
+        default:{
+          fontFamily:'main',
+          color:'text',
+        },
         heading: {
           fontFamily:'main'
         }
