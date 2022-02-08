@@ -16,6 +16,7 @@ const AccidentalNote: React.FunctionComponent<IAccidentalNoteProps> = (
       sx={{
         fontFamily: "main",
         lineHeight: 1,
+        height: "1.5em",
         gridAutoFlow:"column",
         gap: ".2em",
         "& svg": {

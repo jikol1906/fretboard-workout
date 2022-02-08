@@ -1,13 +1,12 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const noteButtonGridStyles: ThemeUIStyleObject = {
-  '--border-width':'4px',
+  '--border-width':['8px',null,null,'10px'],
   gridColumn:'2/3',
   gridTemplateColumns: ["1fr auto 1fr",null,null,'repeat(4,1fr)'],
   gridTemplateRows: ["1fr auto 1fr",null,null,"auto"],
   alignSelf:[null,null,null,"center"],
   borderRadius:'10px',
-  padding:[null,null,null,"4rem 0"],
   gridTemplateAreas: [`
         'b1 l b2'
         'l2s l l2e'

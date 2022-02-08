@@ -15,7 +15,7 @@
       text: {
         stat: {
           fontFamily:'main',
-          fontSize:['2.5rem','4rem']
+          fontSize:['2.5rem','2.8rem',null,"4rem"]
         },
         heading: {
           fontFamily:'main'

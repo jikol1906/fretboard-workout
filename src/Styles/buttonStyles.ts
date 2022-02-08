@@ -16,12 +16,12 @@ const btnReset: ThemeUIStyleObject = {
   paddingRight: 0,
   paddingTop: 0,
   cursor: "pointer",
+  outline: "none",
 };
 
 const buttonStyles: ThemeUIStyleObject = {
   ...btnReset,
   padding: "0.6em 1.7em",
-  outline: "none",
   textAlign: "center",
   letterSpacing: "2px",
   textTransform: "uppercase",
@@ -54,6 +54,14 @@ export const btnStyles = {
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    fontSize: ["2.4rem","4rem"],
+    borderRadius:0,
+    fontSize: ["2.4rem","3rem","5.6rem","5rem"],
+    padding:[null,null,null,"4rem 0"],
+    '&:not(:last-child)': {
+      borderStyle:'solid',
+      borderColor:'text',
+      borderRightWidth:[null,null,null,'var(--border-width)'],
+    }
+
   }
 };

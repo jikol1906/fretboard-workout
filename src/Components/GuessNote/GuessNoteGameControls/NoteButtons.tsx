@@ -32,7 +32,7 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
       const [sharp, flat] = b.split("/").map(n => n.replace(/#|b/,""));
       return <AccidentalNote sharpNote={sharp} flatNote={flat} />;
     }
-    return b;
+    return <span style={{height:'1.5em'}}>{b}</span>;
   });
 
   const btnClicked = (val: string) => {
