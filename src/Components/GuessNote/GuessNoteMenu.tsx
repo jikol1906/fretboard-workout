@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { Button, Grid, Label, Slider } from "theme-ui";
-import { selectFretboardRotation, setFretboardRotation, setHideFretboardCircles } from "../../redux/guessNoteSlice";
+import { selectFretboardRotation, setFretboardRotation, setGameStarted, setHideFretboardCircles } from "../../redux/guessNoteSlice";
 import { useAppSelector } from "../../redux/hooks";
+import AccidentalNote from "../AccidentalNote/AccidentalNote";
 import Checkbox from "../Checkbox/Checkbox";
 import { inputContainer, menuContainerStyles } from "./GuessNoteMenuStyles";
 
@@ -12,7 +13,10 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
   const rotation = useAppSelector(selectFretboardRotation);
   return (
     <Grid sx={menuContainerStyles}>
-      <Button style={{ gridArea: "start-button" }}>Start</Button>
+      <Button 
+      style={{ gridArea: "start-button" }}
+      onClick={e => dispatch(setGameStarted(true))}
+      >Start</Button>
       <Grid sx={inputContainer} style={{gridArea:'practice-mode'}}>
         <Label htmlFor="checkbox">Practice mode</Label>
         <Checkbox id="checkbox" />

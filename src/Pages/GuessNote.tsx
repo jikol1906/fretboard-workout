@@ -1,18 +1,25 @@
 /** @jsxImportSource theme-ui */
-import { Grid} from "theme-ui";
+import { Grid } from "theme-ui";
 import Fretboard from "../Components/Fretboard/Fretboard";
-import GuessNoteMenu from "../Components/GuessNoteMenu/GuessNoteMenu";
+import GuessNoteGameControls from "../Components/GuessNote/GuessNoteGameControls/GuessNoteGameControls";
+import GuessNoteMenu from "../Components/GuessNote/GuessNoteMenu";
 
-interface IGuessNoteProps {}
+import { selectGameStarted } from "../redux/guessNoteSlice";
+import { useAppSelector } from "../redux/hooks";
 
-const GuessNote: React.FunctionComponent<IGuessNoteProps> = (props) => {
+const GuessNote: React.FunctionComponent = () => {
+  const gameStarted = useAppSelector(selectGameStarted);
   return (
-    <Grid gap="0" sx={{ 
-      height: "100%",
-      gridTemplateRows:"1fr 1fr"
-    }}>
+    <Grid
+      sx={{
+        height: "100%",
+        gridTemplateRows: "1fr 1fr",
+        padding: "1",
+        gap: "2",
+      }}
+    >
       <Fretboard />
-      <GuessNoteMenu/>
+      {gameStarted ? <GuessNoteGameControls /> : <GuessNoteMenu />}
     </Grid>
   );
 };
