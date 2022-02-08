@@ -54,6 +54,6 @@ export const btnStyles = {
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    fontSize: ["2.4rem"],
+    fontSize: ["2.4rem","4rem"],
   }
 };
