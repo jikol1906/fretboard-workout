@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Button, Grid, Label, Slider } from "theme-ui";
-import { selectFretboardRotation, setFretboardRotation } from "../../redux/guessNoteSlice";
+import { selectFretboardRotation, setFretboardRotation, setHideFretboardCircles } from "../../redux/guessNoteSlice";
 import { useAppSelector } from "../../redux/hooks";
 import Checkbox from "../Checkbox/Checkbox";
 import { inputContainer, menuContainerStyles } from "./GuessNoteMenuStyles";
@@ -12,16 +12,16 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
   const rotation = useAppSelector(selectFretboardRotation);
   return (
     <Grid sx={menuContainerStyles}>
-      <Button style={{ gridArea: "a1" }}>Start</Button>
-      <Grid sx={inputContainer} style={{gridArea:'a2'}}>
+      <Button style={{ gridArea: "start-button" }}>Start</Button>
+      <Grid sx={inputContainer} style={{gridArea:'practice-mode'}}>
         <Label htmlFor="checkbox">Practice mode</Label>
         <Checkbox id="checkbox" />
       </Grid>
-      <Grid sx={inputContainer} style={{gridArea:'a4'}}>
+      <Grid sx={inputContainer} style={{gridArea:'hide-circles'}}>
         <Label htmlFor="checkbox">hide circles</Label>
         <Checkbox id="checkbox" onChange={e => dispatch(setHideFretboardCircles(e.target.checked))}/>
       </Grid>
-      <Grid sx={inputContainer} style={{gridArea:'a3'}} >
+      <Grid sx={inputContainer} style={{gridArea:'fretboard-rotation'}} >
         <Label htmlFor="slider">Fretboard Rotation</Label>
         <Slider
           sx={{ width: "50%" }}

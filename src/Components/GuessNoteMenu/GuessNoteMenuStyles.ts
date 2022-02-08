@@ -1,12 +1,11 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const menuContainerStyles: ThemeUIStyleObject = {
-  gridTemplateColumns: "auto auto",
   gridTemplateAreas: [
     `
-      'a1 a1'
-      'a2 a4'
-      'a3 a3'
+      'start-button       start-button      '
+      'practice-mode      hide-circles      '
+      'fretboard-rotation fretboard-rotation'
     `,
     `
       'a1 a2'
