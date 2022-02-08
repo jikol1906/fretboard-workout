@@ -9,7 +9,6 @@ import {
   setPracticemode,
 } from "../../redux/guessNoteSlice";
 import { useAppSelector } from "../../redux/hooks";
-import AccidentalNote from "../AccidentalNote/AccidentalNote";
 import Checkbox from "../Checkbox/Checkbox";
 import { inputContainer, menuContainerStyles } from "./GuessNoteMenuStyles";
 

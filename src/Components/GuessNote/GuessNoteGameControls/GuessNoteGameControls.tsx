@@ -9,6 +9,7 @@ import {
 } from "../../../redux/guessNoteSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
+import GuessNoteNoteButton from "./GuessNoteNoteButton";
 
 const GuessNoteGameControls: React.FunctionComponent = (props) => {
   const [total, correct] = useAppSelector(selectTotalandCorrectAnswered);
@@ -23,7 +24,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
 
   return (
     <Grid
-      gap="0"
+      gap="1rem"
       sx={{
         gridTemplateRows: "auto 1fr",
       }}
@@ -35,10 +36,12 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       </Grid>
       <Grid columns="1fr 1fr" gap="0.2rem">
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <GuessNoteNoteButton>A</GuessNoteNoteButton>
+        <GuessNoteNoteButton>B</GuessNoteNoteButton>
+        <GuessNoteNoteButton>C</GuessNoteNoteButton>
+        <GuessNoteNoteButton>
+          <AccidentalNote sharpNote="C" flatNote="D"/>
+        </GuessNoteNoteButton>
       </Grid>
     </Grid>
   );

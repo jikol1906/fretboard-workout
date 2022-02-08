@@ -15,12 +15,13 @@ const AccidentalNote: React.FunctionComponent<IAccidentalNoteProps> = (
     <Grid
       sx={{
         fontFamily: "main",
-        fontSize: "1.5rem",
         lineHeight: 1,
         gridAutoFlow:"column",
         gap: ".2em",
         "& svg": {
           marginTop: ".5em",
+          width:"auto",
+          height:"1em"
         },
       }}
     >
