@@ -1,9 +1,19 @@
-import * as React from "react";
+/** @jsxImportSource theme-ui */
 
-const FretboardSvg: React.FunctionComponent = () => {
+import { ThemeUIStyleObject } from "theme-ui";
+
+const FretboardSvg: React.FunctionComponent<{hideCircles : boolean}> = ({hideCircles}) => {
+
+  const style : ThemeUIStyleObject = {
+    width: "100%",
+    height: "auto",
+    ...(hideCircles && {'& circle' : {display:'none'}})
+  }
+  
+  
   return (
     <svg
-      style={{ width: "100%", height: "auto" }}
+      sx={style}
       id="fretboard"
       viewBox="0 0 1020 256"
       fill="none"

@@ -4,6 +4,7 @@ import { Box } from "theme-ui";
 import {
   selectFretboardRotation,
   selectPointers,
+  selectHideFretboardCircles,
   setPointers,
 } from "../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -13,6 +14,7 @@ import { pointerStyles } from "./PointerStyles";
 const Fretboard: React.FunctionComponent = (props) => {
   const rotation = useAppSelector(selectFretboardRotation);
   const pointersRedux = useAppSelector(selectPointers);
+  const showFretboardCircles = useAppSelector(selectHideFretboardCircles);
   const dispatch = useAppDispatch();
 
   const pointers = pointersRedux.map(([x, y]) => { 
@@ -39,7 +41,7 @@ const Fretboard: React.FunctionComponent = (props) => {
           transform: "perspective(500px) rotateX(calc(var(--rotation) * 1deg))",
         }}
       >
-        <FretboardSvg />
+        <FretboardSvg hideCircles={showFretboardCircles} />
         {pointers}
       </Box>
     </Box>

@@ -7,6 +7,7 @@ import { RootState } from "./store";
 export interface AppState {
   gameStarted:boolean,
   practiceMode:boolean,
+  hideCircles:boolean,
   wrongAnswerClicked:boolean,
   timeBetween: number;
   fretboardRotation:number;
@@ -19,6 +20,7 @@ export interface AppState {
 
 const initialState: AppState = {
   gameStarted:false,
+  hideCircles:false,
   practiceMode:false,
   wrongAnswerClicked:false,
   timeBetween: 50,
@@ -42,6 +44,9 @@ export const guessNoteSlice = createSlice({
     },
     setFretboardRotation(state,action: PayloadAction<number>) {
       state.fretboardRotation = action.payload
+    },
+    setHideFretboardCircles(state,action: PayloadAction<boolean>) {
+      state.hideCircles = action.payload
     },
     setPointers(state,action: PayloadAction<[number,number][]>) {
       state.pointers = action.payload
@@ -77,6 +82,7 @@ export const guessNoteSlice = createSlice({
 export const {
   setTimeBetween,
   setFretboardRotation,
+  setHideFretboardCircles,
   setPointers,
   setGameStarted,
   setNoteButtonValues,
@@ -91,6 +97,7 @@ export const {
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectTimeBetween = (state: RootState) => state.app.timeBetween;
+export const selectHideFretboardCircles = (state: RootState) => state.app.hideCircles;
 export const selectPracticeMode = (state: RootState) => state.app.practiceMode;
 export const selectFretboardRotation = (state: RootState) => state.app.fretboardRotation;
 export const selectWrongAnswerClicked = (state: RootState) => state.app.wrongAnswerClicked;
