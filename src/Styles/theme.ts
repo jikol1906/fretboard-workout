@@ -23,7 +23,7 @@
           fontFamily: 'main',
           textTransform:'uppercase',
           letterSpacing:2,
-          fontSize:["1.6rem",null,"2.5rem"],
+          fontSize:["1.6rem",null,"2.8rem"],
           width: "auto"
         }
       },

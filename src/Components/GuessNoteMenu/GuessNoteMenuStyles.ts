@@ -7,16 +7,20 @@ export const menuContainerStyles: ThemeUIStyleObject = {
       'practice-mode      hide-circles      '
       'fretboard-rotation fretboard-rotation'
     `,
+    null,
+    null,
     `
-      'a1 a2'
-      'a1 a3'
+      'start-button       practice-mode fretboard-rotation'
+      'start-button       hide-circles fretboard-rotation'
     `,
   ],
-  justifyContent: "center",
+  gridTemplateColumns:[null,null,null,"1fr auto 1fr"],
+  maxWidth:'100rem',
+  margin:'0 auto',
   alignContent: "center",
   alignItems: "center",
   justifyItems: "center",
-  gap: "2",
+  gap: "3",
 };
 
 export const inputContainer: ThemeUIStyleObject = {

@@ -24,7 +24,7 @@ export const checkBoxLabelStyles:ThemeUIStyleObject = {
   display: 'inline-flex',
   alignItems: 'center',
   cursor: 'pointer',
-  '--slider-container-height': '3em',
+  '--slider-container-height': '2rem',
   '--slider-container-width': 'calc(var(--slider-container-height) * 2)',
   '--slider-size': 'calc(var(--slider-container-height) * 0.7)',
   '--slider-padding': 'calc(var(--slider-container-height) * 0.15)',

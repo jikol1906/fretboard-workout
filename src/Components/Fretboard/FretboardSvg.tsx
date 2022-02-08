@@ -1,9 +1,13 @@
 /** @jsxImportSource theme-ui */
 
 import { ThemeUIStyleObject } from "theme-ui";
+import { selectHideFretboardCircles } from "../../redux/guessNoteSlice";
+import { useAppSelector } from "../../redux/hooks";
 
-const FretboardSvg: React.FunctionComponent<{hideCircles : boolean}> = ({hideCircles}) => {
+const FretboardSvg: React.FunctionComponent = () => {
 
+  const hideCircles = useAppSelector(selectHideFretboardCircles);
+  
   const style : ThemeUIStyleObject = {
     width: "100%",
     height: "auto",

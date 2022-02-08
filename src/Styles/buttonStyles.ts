@@ -13,7 +13,7 @@ export const buttonStyles: ThemeUIStyleObject = {
   borderWidth: [4,null,4],
   borderStyle: "solid",
   borderColor: "text",
-  fontSize:["1.7rem","1.5rem","2.4rem"],
+  fontSize:["1.7rem",null,"2.5rem"],
   color: "text",
   bg: 'transparent'
 };
