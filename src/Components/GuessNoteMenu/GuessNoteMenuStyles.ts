@@ -1,12 +1,12 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 export const menuContainerStyles: ThemeUIStyleObject = {
-  gridTemplateColumns: ["auto", "auto auto"],
+  gridTemplateColumns: "auto auto",
   gridTemplateAreas: [
     `
-      'a1'
-      'a2'
-      'a3'
+      'a1 a1'
+      'a2 a4'
+      'a3 a3'
     `,
     `
       'a1 a2'

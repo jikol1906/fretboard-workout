@@ -17,6 +17,10 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
         <Label htmlFor="checkbox">Practice mode</Label>
         <Checkbox id="checkbox" />
       </Grid>
+      <Grid sx={inputContainer} style={{gridArea:'a4'}}>
+        <Label htmlFor="checkbox">hide circles</Label>
+        <Checkbox id="checkbox" onChange={e => dispatch(setHideFretboardCircles(e.target.checked))}/>
+      </Grid>
       <Grid sx={inputContainer} style={{gridArea:'a3'}} >
         <Label htmlFor="slider">Fretboard Rotation</Label>
         <Slider
