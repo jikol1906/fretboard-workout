@@ -22,9 +22,9 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       gridTemplateRows:"auto auto 1fr",
     }}
   >
-    <Grid gap="0" columns="1fr 1fr" sx={{justifyItems:"center"}}>
-      <Text sx={{fontSize:'2.4rem'}}>{correct}/{total}</Text>
-      <Text sx={{fontSize:'2.4rem'}}>{isPracticeMode ? "∞" : timeLeft/1000}</Text>
+    <Grid gap="0" variant="equalWidths" sx={{justifyItems:"center"}}>
+      <Text variant="stat">{correct}/{total}</Text>
+      <Text variant="stat">{isPracticeMode ? "∞" : timeLeft/1000}</Text>
     </Grid>
     {/* <Notebuttons/> */}
   </Grid>;

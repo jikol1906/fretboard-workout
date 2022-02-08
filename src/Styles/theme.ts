@@ -13,9 +13,9 @@
       buttons:btnStyles,
       space:["0","1.3rem","2.8rem","5rem"],
       text: {
-        default:{
+        stat: {
           fontFamily:'main',
-          color:'text',
+          fontSize:['2.5rem','4rem']
         },
         heading: {
           fontFamily:'main'
@@ -28,6 +28,12 @@
           letterSpacing:2,
           fontSize:["1.6rem",null,"2.8rem"],
           width: "auto"
+        }
+      },
+      grids: {
+        equalWidths: {
+          gridAutoFlow:'column',
+          gridAutoColumns:"1fr"
         }
       },
       styles: {
