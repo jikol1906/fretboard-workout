@@ -17,6 +17,7 @@ import {
   shuffle,
 } from "../../../Utils/Utils";
 import { NoteButtons } from "../NoteButtons/NoteButtons";
+import NoteSlider from "../NoteSlider/NoteSlider";
 
 let fretboard = generateFretboardWithFlatsAndSharps();
 fretboard.forEach((s) => s.shift());
@@ -80,7 +81,8 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         </Text>
         <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       </Grid>
-      <NoteButtons disabled={!isPracticeMode && timeLeft/1000 <= 0}/>
+      {/* <NoteButtons disabled={!isPracticeMode && timeLeft/1000 <= 0}/> */}
+      <NoteSlider/>
     </Grid>
   );
 };

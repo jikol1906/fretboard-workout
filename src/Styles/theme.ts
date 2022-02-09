@@ -13,6 +13,11 @@
       buttons:btnStyles,
       space:["0","1.3rem","2.8rem","5rem"],
       text: {
+        default:{
+          fontFamily:'main',
+          textTransform:'uppercase',
+          fontSize:['1.1rem']
+        },
         stat: {
           fontFamily:'main',
           fontSize:['2.5rem','2.8rem',null,"4rem"]
