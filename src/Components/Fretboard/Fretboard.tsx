@@ -26,7 +26,7 @@ const Fretboard: React.FunctionComponent = (props) => {
         height:"17em",
         fontSize:"min(1.4vw,1.6rem)",
         position: 'relative',
-        top:"calc(var(--rotation) * 0.1em)",
+        top:"calc(var(--rotation) * 0.05em)",
       }}
       style={styles}
     >

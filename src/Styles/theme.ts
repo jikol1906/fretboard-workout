@@ -28,7 +28,7 @@
           letterSpacing:2,
           fontSize:["1.6rem",null,"2.8rem"],
           width: "auto"
-        }
+        },
       },
       grids: {
         equalWidths: {

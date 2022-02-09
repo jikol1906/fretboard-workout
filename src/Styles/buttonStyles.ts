@@ -55,7 +55,7 @@ export const btnStyles = {
     justifyContent:'center',
     alignItems:'center',
     borderRadius:0,
-    fontSize: ["2.4rem","3rem","5.6rem","5rem"],
+    fontSize: ["2.4rem","3rem","4rem","5rem"],
     padding:[null,null,null,"4rem 0"],
     '&:not(:last-child)': {
       borderStyle:'solid',
