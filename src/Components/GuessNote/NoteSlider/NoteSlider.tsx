@@ -30,6 +30,10 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
   const correctAnswer = useAppSelector(selectCorrectAnswer);
   const stringNumber = useAppSelector(selectFindNodeString);
 
+  const buttonClicked = useCallback(() => {
+    
+  },[]);
+
   useEffect(() => {
     sliderRef.current?.focus()
   },[pointers])
@@ -69,8 +73,9 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
         </Text>{" "}
         string
       </Text>
-      <Slider ref={sliderRef} mb="2" min="0" max="11" value={sliderVal} onChange={sliderHandler} />
-      <Button>Place</Button>
+      <Button onClick={buttonClicked}>
+        Place
+      </Button>
     </Grid>
   );
 };
