@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useCountDown from "react-countdown-hook";
 import { Grid, Text } from "theme-ui";
 import {
