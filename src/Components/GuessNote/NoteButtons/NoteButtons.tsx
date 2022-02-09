@@ -10,7 +10,7 @@ import {
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
-import { noteButtonGridStyles } from "./GuessNoteGameControlsStyles";
+import { noteButtonGridStyles } from "../GuessNoteGameControls/GuessNoteGameControlsStyles";
 
 interface INoteButtonsProps {
   disabled: boolean;

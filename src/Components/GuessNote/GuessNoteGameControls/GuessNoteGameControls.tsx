@@ -16,7 +16,7 @@ import {
   getRandomIntInclusive,
   shuffle,
 } from "../../../Utils/Utils";
-import { NoteButtons } from "./NoteButtons";
+import { NoteButtons } from "../NoteButtons/NoteButtons";
 
 let fretboard = generateFretboardWithFlatsAndSharps();
 fretboard.forEach((s) => s.shift());
