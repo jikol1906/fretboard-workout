@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui */
+import { useEffect, useRef } from "react";
 import { Button, Flex, Grid, Slider, Text } from "theme-ui";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
 
@@ -32,16 +33,16 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
     >
       <Text as="p" sx={{ display: "flex", alignItems: "center" }}>
         Place{" "}
-        <Text variant="stat" mx="1">
-          <AccidentalNote sharpNote="C" flatNote="A" />
+        <Text variant="stat" mx={[1,2,3]}>
+          <AccidentalNote sharpNote="C" flatNote="D" />
         </Text>{" "}
         on the{" "}
-        <Text mx="1" variant="stat">
+        <Text mx={[1,2,3]} variant="stat">
           {getStringNumber(2)}
         </Text>{" "}
         string
       </Text>
-      <Slider ref={sliderRef} min="0" max="12" onChange={(e) => console.log(e.target.value)} />
+      <Slider ref={sliderRef} mb="2" min="1" max="12" onChange={(e) => console.log(e.target.value)} />
       <Button>Place</Button>
     </Grid>
   );

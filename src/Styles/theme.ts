@@ -16,15 +16,11 @@
         default:{
           fontFamily:'main',
           textTransform:'uppercase',
-          fontSize:['1.1rem']
-        },
-        noteSliderMessage: {
-          fontFamily:'main',
-          textTransform:'uppercase',
+          fontSize:['1.1rem',"1.5rem","2.5rem"]          
         },
         stat: {
           fontFamily:'main',
-          fontSize:['2.5rem','2.8rem',null,"4rem"]
+          fontSize:['2.4rem','3.5rem',null,"4.5rem"]
         },
         heading: {
           fontFamily:'main'
