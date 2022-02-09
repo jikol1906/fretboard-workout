@@ -4,6 +4,7 @@ import { useCallback, useEffect } from "react";
 import useCountDown from "react-countdown-hook";
 import { Grid, Text } from "theme-ui";
 import {
+  findNodeSetString,
   selectPracticeMode,
   selectTotalandCorrectAnswered,
   setCorrectAnswer,
@@ -38,7 +39,16 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
     }
 
     function findNodeMode() {
-      
+      const randInt1 = getRandomIntInclusive(0, fretboard[0].length - 1);
+      const randInt2 = getRandomIntInclusive(0, fretboard.length - 1);
+      const noteToFind = fretboard[randInt2][randInt1];
+
+      const onString = getRandomIntInclusive(0, fretboard.length - 1);
+
+      dispatch(setCorrectAnswer(noteToFind))
+      dispatch(findNodeSetString(onString))
+      dispatch(setPointers([[getRandomIntInclusive(0, fretboard[0].length - 1),onString]]))
+
     }
 
     function chooseNoteMode() {
