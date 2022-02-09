@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FretboardPosition } from "../Utils/Types";
+import { FretboardPosition, PointerPosition } from "../Utils/Types";
 import { RootState } from "./store";
 
 
@@ -17,6 +17,7 @@ export interface AppState {
   correctAnswered: number;
   findNodeMode: {
     stringNumber:number,
+    correctFret:number
   }
 }
 
@@ -33,6 +34,7 @@ const initialState: AppState = {
   correctAnswered: 0,
   findNodeMode : {
     stringNumber:0,
+    correctFret:0
   }
 };
 
@@ -80,6 +82,9 @@ export const guessNoteSlice = createSlice({
     findNodeSetString(state,action: PayloadAction<number>) {
       state.findNodeMode.stringNumber = action.payload
     },
+    findNodeSetCorrectFret(state,action: PayloadAction<number>) {
+      state.findNodeMode.correctFret = action.payload
+    },
     
   },
 });
@@ -96,6 +101,7 @@ export const {
   incrementTotalAnswered,
   resetCorrectAndTotalAnswers,
   findNodeSetString,
+  findNodeSetCorrectFret,
   incrementCorrectAnswered } = guessNoteSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
@@ -111,6 +117,7 @@ export const selectNoteButtons = (state: RootState) => state.app.noteButtonValue
 export const selectTotalandCorrectAnswered = (state: RootState) => [state.app.totalAnswered, state.app.correctAnswered];
 export const selectCorrectAnswer = (state: RootState) => state.app.correctAnswer;
 export const selectFindNodeString = (state: RootState) => state.app.findNodeMode.stringNumber;
+export const selectFindNodeCorrectFret = (state: RootState) => state.app.findNodeMode.correctFret;
 
 
 
