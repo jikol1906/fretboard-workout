@@ -15,6 +15,9 @@ export interface AppState {
   noteButtonValues:[FretboardPosition,FretboardPosition,FretboardPosition,FretboardPosition]
   totalAnswered: number;
   correctAnswered: number;
+  findNodeMode: {
+    stringNumber:number,
+  }
 }
 
 const initialState: AppState = {
@@ -28,6 +31,9 @@ const initialState: AppState = {
   noteButtonValues:["","","",""],
   totalAnswered: 0,
   correctAnswered: 0,
+  findNodeMode : {
+    stringNumber:0,
+  }
 };
 
 
@@ -70,7 +76,11 @@ export const guessNoteSlice = createSlice({
     resetCorrectAndTotalAnswers(state) {
       state.correctAnswered = 0;
       state.totalAnswered = 0;
-    }
+    },
+    findNodeSetString(state,action: PayloadAction<number>) {
+      state.findNodeMode.stringNumber = action.payload
+    },
+    
   },
 });
 
@@ -85,6 +95,7 @@ export const {
   setPracticemode,
   incrementTotalAnswered,
   resetCorrectAndTotalAnswers,
+  findNodeSetString,
   incrementCorrectAnswered } = guessNoteSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
@@ -99,6 +110,7 @@ export const selectGameStarted = (state: RootState) => state.app.gameStarted;
 export const selectNoteButtons = (state: RootState) => state.app.noteButtonValues;
 export const selectTotalandCorrectAnswered = (state: RootState) => [state.app.totalAnswered, state.app.correctAnswered];
 export const selectCorrectAnswer = (state: RootState) => state.app.correctAnswer;
+export const selectFindNodeString = (state: RootState) => state.app.findNodeMode.stringNumber;
 
 
 
