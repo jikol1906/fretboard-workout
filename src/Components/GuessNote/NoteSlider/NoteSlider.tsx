@@ -35,17 +35,23 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
   },[]);
 
   useEffect(() => {
-    sliderRef.current?.focus()
-  },[pointers])
-  
-  useEffect(() => {    
-    if(pointers[0]) {
-      console.log(pointers[0]);
-      console.log(pointers[0][0]);
-      
-      setSliderVal(pointers[0][0])
+    function handleEnterClicked (event:KeyboardEvent) {
+      if(event.key === 'Enter') {
+        buttonClicked() 
+      }
     }
-  },[pointers])
+    document.addEventListener("keyup", handleEnterClicked);
+
+    return () => {
+      document.removeEventListener("keyup",handleEnterClicked)
+    }
+  }, [buttonClicked]);
+
+  useEffect(() => {
+    if (pointers[0]) {
+      setSliderVal(pointers[0][0]);
+    }
+  }, [pointers]);
 
   const sliderHandler = (e: React.FormEvent<HTMLInputElement>) => {
 
