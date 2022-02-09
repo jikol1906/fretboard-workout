@@ -27,6 +27,8 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
   const [sliderVal, setSliderVal] = useState(0);
   const dispatch = useDispatch();
   const pointers = useAppSelector(selectPointers);
+  const correctAnswer = useAppSelector(selectCorrectAnswer);
+  const stringNumber = useAppSelector(selectFindNodeString);
 
   useEffect(() => {
     sliderRef.current?.focus()
@@ -43,11 +45,13 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
 
   const sliderHandler = (e: React.FormEvent<HTMLInputElement>) => {
 
-    const currentString = pointers[0][1]
-    dispatch(setPointers([[+e.currentTarget.value,currentString]]))  
-    
-  }
-  
+  let correctAnswerJsx;
+
+  if(correctAnswer.includes("#")) {
+    const notes = correctAnswer.replace(/#|b/g,"").split("/")
+    correctAnswerJsx = <AccidentalNote sharpNote={notes[0]} flatNote={notes[1]} />
+  } else {correctAnswerJsx = correctAnswer}
+
 
   return (
     <Grid
@@ -56,12 +60,12 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
     >
       <Text as="p" sx={{ display: "flex", alignItems: "center" }}>
         Place{" "}
-        <Text variant="stat" mx={[1,2,3]}>
-          <AccidentalNote sharpNote="C" flatNote="D" />
+        <Text variant="stat" mx={[1, 2, 3]}>
+          {correctAnswerJsx}
         </Text>{" "}
         on the{" "}
-        <Text mx={[1,2,3]} variant="stat">
-          {getStringNumber(2)}
+        <Text mx={[1, 2, 3]} variant="stat">
+          {getStringNumber(stringNumber + 1)}
         </Text>{" "}
         string
       </Text>
