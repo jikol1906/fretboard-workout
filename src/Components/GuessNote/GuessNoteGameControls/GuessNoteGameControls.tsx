@@ -27,6 +27,7 @@ const fretboard = generateFretboardWithoutOpenStrings();
 
 const GuessNoteGameControls: React.FunctionComponent = (props) => {
   const [total, correct] = useAppSelector(selectTotalandCorrectAnswered);
+  const [mode,setMode] = useState<'guess'|'find'>("find")
   const [timeLeft, { start }] = useCountDown(60000, 1000);
   const dispatch = useAppDispatch();
   const isPracticeMode = useAppSelector(selectPracticeMode);
@@ -87,6 +88,16 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
     newRound();
   }, [newRound, total]);
 
+  let currentMode;
+
+  switch(mode) {
+    case 'guess':
+      currentMode = <NoteButtons disabled={!isPracticeMode && timeLeft/1000 <= 0}/>
+      break;
+    case 'find':
+      currentMode = <NoteSlider />
+  }
+
   return (
     <Grid
       sx={{
@@ -106,8 +117,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         </Text>
         <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       </Grid>
-      {/* <NoteButtons disabled={!isPracticeMode && timeLeft/1000 <= 0}/> */}
-      <NoteSlider />
+      {currentMode}
     </Grid>
   );
 };
