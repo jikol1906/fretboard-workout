@@ -81,7 +81,7 @@ export function generateFretboardWithoutOpenStrings() {
 }
 
 export function randomBool() {
-  return Math.random() <= 0;
+  return Math.random() <= .5;
 }
 
 /**
