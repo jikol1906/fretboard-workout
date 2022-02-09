@@ -43,11 +43,12 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       const stringNo = getRandomIntInclusive(0, fretboard.length - 1);
       const noteToFind = fretboard[stringNo][fretNo];
 
-      const onString = getRandomIntInclusive(0, fretboard.length - 1);
+      
 
       dispatch(setCorrectAnswer(noteToFind))
-      dispatch(findNodeSetString(onString))
-      dispatch(setPointers([[getRandomIntInclusive(0, fretboard[0].length - 1),onString]]))
+      dispatch(findNodeSetCorrectFret(fretNo))
+      dispatch(findNodeSetString(stringNo))
+      dispatch(setPointers([[getRandomIntInclusive(0, fretboard[0].length - 1),stringNo]]))
 
     }
 
