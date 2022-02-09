@@ -10,7 +10,7 @@ export interface AppState {
   hideCircles:boolean,
   wrongAnswerClicked:boolean,
   fretboardRotation:number;
-  pointers: [number,number][];
+  pointers: PointerPosition[];
   correctAnswer:string;
   noteButtonValues:[FretboardPosition,FretboardPosition,FretboardPosition,FretboardPosition]
   totalAnswered: number;
