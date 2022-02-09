@@ -34,10 +34,10 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
 
   const newRound = useCallback(() => {
     
-    chooseNoteMode();
     if(randomBool()) {
-    } else {
       findNodeMode();
+    } else {
+      chooseNoteMode();
     }
 
     function findNodeMode() {
@@ -51,6 +51,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       dispatch(findNodeSetCorrectFret(fretNo))
       dispatch(findNodeSetString(stringNo))
       dispatch(setPointers([[getRandomIntInclusive(0, fretboard[0].length - 1),stringNo]]))
+      setMode("find")
 
     }
 
@@ -75,6 +76,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       dispatch(setNoteButtonValues(notesForAnswerButtons));
       dispatch(setCorrectAnswer(fretboard[stringNo][fretNo]));
       dispatch(setPointers([[fretNo, stringNo]]));
+      setMode("guess")
     }
   }, [dispatch]);
 
