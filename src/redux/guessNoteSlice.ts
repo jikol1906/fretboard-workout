@@ -9,7 +9,6 @@ export interface AppState {
   practiceMode:boolean,
   hideCircles:boolean,
   wrongAnswerClicked:boolean,
-  timeBetween: number;
   fretboardRotation:number;
   pointers: [number,number][];
   correctAnswer:string;
@@ -23,7 +22,6 @@ const initialState: AppState = {
   hideCircles:false,
   practiceMode:false,
   wrongAnswerClicked:false,
-  timeBetween: 50,
   fretboardRotation:0,
   pointers: [],
   correctAnswer:"",
@@ -39,9 +37,6 @@ export const guessNoteSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    setTimeBetween(state,action: PayloadAction<number>) {
-      state.timeBetween = action.payload
-    },
     setFretboardRotation(state,action: PayloadAction<number>) {
       state.fretboardRotation = action.payload
     },
@@ -80,7 +75,6 @@ export const guessNoteSlice = createSlice({
 });
 
 export const {
-  setTimeBetween,
   setFretboardRotation,
   setHideFretboardCircles,
   setPointers,
@@ -96,7 +90,6 @@ export const {
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectTimeBetween = (state: RootState) => state.app.timeBetween;
 export const selectHideFretboardCircles = (state: RootState) => state.app.hideCircles;
 export const selectPracticeMode = (state: RootState) => state.app.practiceMode;
 export const selectFretboardRotation = (state: RootState) => state.app.fretboardRotation;
