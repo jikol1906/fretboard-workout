@@ -35,6 +35,8 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
   },[]);
 
   useEffect(() => {
+    sliderRef.current?.focus();
+
     function handleEnterClicked (event:KeyboardEvent) {
       if(event.key === 'Enter') {
         buttonClicked() 
@@ -53,7 +55,10 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
     }
   }, [pointers]);
 
-  const sliderHandler = (e: React.FormEvent<HTMLInputElement>) => {
+  const sliderHandler = useCallback((e: React.FormEvent<HTMLInputElement>) => {
+    const currentString = pointers[0][1];
+    dispatch(setPointers([[+e.currentTarget.value, currentString]]));
+  },[dispatch,pointers]);
 
   let correctAnswerJsx;
 
@@ -79,6 +84,14 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
         </Text>{" "}
         string
       </Text>
+      <Slider
+        ref={sliderRef}
+        mb="2"
+        min="0"
+        max="11"
+        value={sliderVal}
+        onChange={sliderHandler}
+      />
       <Button onClick={buttonClicked}>
         Place
       </Button>
