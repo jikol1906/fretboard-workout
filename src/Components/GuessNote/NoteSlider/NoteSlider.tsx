@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Button, Grid, Slider, Text } from "theme-ui";
-import { selectPointers, setPointers } from "../../../redux/guessNoteSlice";
+import { incrementCorrectAnswered, incrementTotalAnswered, selectCorrectAnswer, selectFindNodeCorrectFret, selectFindNodeString, selectPointers, setPointers } from "../../../redux/guessNoteSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
 
@@ -28,11 +28,18 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
   const dispatch = useDispatch();
   const pointers = useAppSelector(selectPointers);
   const correctAnswer = useAppSelector(selectCorrectAnswer);
+  const correctFret = useAppSelector(selectFindNodeCorrectFret);
   const stringNumber = useAppSelector(selectFindNodeString);
 
   const buttonClicked = useCallback(() => {
-    
-  },[]);
+    if(pointers[0][0] === correctFret) {
+      dispatch(incrementCorrectAnswered())
+      dispatch(incrementTotalAnswered())
+    } else {
+      dispatch(incrementTotalAnswered())
+    }
+        
+  },[pointers]);
 
   useEffect(() => {
     sliderRef.current?.focus();
