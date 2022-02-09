@@ -39,9 +39,9 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
     }
 
     function findNodeMode() {
-      const randInt1 = getRandomIntInclusive(0, fretboard[0].length - 1);
-      const randInt2 = getRandomIntInclusive(0, fretboard.length - 1);
-      const noteToFind = fretboard[randInt2][randInt1];
+      const fretNo = getRandomIntInclusive(0, fretboard[0].length - 1);
+      const stringNo = getRandomIntInclusive(0, fretboard.length - 1);
+      const noteToFind = fretboard[stringNo][fretNo];
 
       const onString = getRandomIntInclusive(0, fretboard.length - 1);
 
@@ -52,10 +52,10 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
     }
 
     function chooseNoteMode() {
-      const randInt1 = getRandomIntInclusive(0, fretboard[0].length - 1);
-      const randInt2 = getRandomIntInclusive(0, fretboard.length - 1);
-      const correctAnswer = fretboard[randInt2][randInt1];
-      const string = fretboard[randInt2]
+      const fretNo = getRandomIntInclusive(0, fretboard[0].length - 1);
+      const stringNo = getRandomIntInclusive(0, fretboard.length - 1);
+      const correctAnswer = fretboard[stringNo][fretNo];
+      const string = fretboard[stringNo]
         .slice()
         .filter((n) => n !== correctAnswer);
       dispatch(setCorrectAnswer(correctAnswer));
@@ -70,8 +70,8 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       shuffle(notesForAnswerButtons);
 
       dispatch(setNoteButtonValues(notesForAnswerButtons));
-      dispatch(setCorrectAnswer(fretboard[randInt2][randInt1]));
-      dispatch(setPointers([[randInt1, randInt2]]));
+      dispatch(setCorrectAnswer(fretboard[stringNo][fretNo]));
+      dispatch(setPointers([[fretNo, stringNo]]));
     }
   }, [dispatch]);
 
