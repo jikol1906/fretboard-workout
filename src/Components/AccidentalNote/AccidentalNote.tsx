@@ -14,7 +14,7 @@ const AccidentalNote: React.FunctionComponent<IAccidentalNoteProps & SxProp> = (
   return (
     <span
       sx={{
-        display: "grid",
+        display: "inline-grid",
         fontFamily: "main",
         lineHeight: 1,
         height: "1.5em",
