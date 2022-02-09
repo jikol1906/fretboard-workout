@@ -4,6 +4,7 @@ import { useCallback, useEffect } from "react";
 import useCountDown from "react-countdown-hook";
 import { Grid, Text } from "theme-ui";
 import {
+  findNodeSetCorrectFret,
   findNodeSetString,
   selectPracticeMode,
   selectTotalandCorrectAnswered,
