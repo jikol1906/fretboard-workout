@@ -13,15 +13,15 @@ import {
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
   generateFretboardWithFlatsAndSharps,
+  generateFretboardWithoutOpenStrings,
   getRandomIntInclusive,
+  randomBool,
   shuffle,
 } from "../../../Utils/Utils";
 import { NoteButtons } from "../NoteButtons/NoteButtons";
 import NoteSlider from "../NoteSlider/NoteSlider";
 
-let fretboard = generateFretboardWithFlatsAndSharps();
-fretboard.forEach((s) => s.shift());
-fretboard = fretboard.map((s) => s.map((n) => n.replace(/\d+/g, "")));
+const fretboard = generateFretboardWithoutOpenStrings();
 
 const GuessNoteGameControls: React.FunctionComponent = (props) => {
   const [total, correct] = useAppSelector(selectTotalandCorrectAnswered);
@@ -30,26 +30,39 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
   const isPracticeMode = useAppSelector(selectPracticeMode);
 
   const newRound = useCallback(() => {
-    const randInt1 = getRandomIntInclusive(0, fretboard[0].length - 1);
-    const randInt2 = getRandomIntInclusive(0, fretboard.length - 1);
-    const correctAnswer = fretboard[randInt2][randInt1];
-    const string = fretboard[randInt2]
-      .slice()
-      .filter((n) => n !== correctAnswer);
-    dispatch(setCorrectAnswer(correctAnswer));
-    shuffle(string);
+    
+    chooseNoteMode();
+    if(randomBool()) {
+    } else {
+      findNodeMode();
+    }
 
-    const notesForAnswerButtons: [string, string, string, string] = [
-      correctAnswer,
-      string[0],
-      string[1],
-      string[2],
-    ];
-    shuffle(notesForAnswerButtons);
+    function findNodeMode() {
+      
+    }
 
-    dispatch(setNoteButtonValues(notesForAnswerButtons));
-    dispatch(setCorrectAnswer(fretboard[randInt2][randInt1]));
-    dispatch(setPointers([[randInt1, randInt2]]));
+    function chooseNoteMode() {
+      const randInt1 = getRandomIntInclusive(0, fretboard[0].length - 1);
+      const randInt2 = getRandomIntInclusive(0, fretboard.length - 1);
+      const correctAnswer = fretboard[randInt2][randInt1];
+      const string = fretboard[randInt2]
+        .slice()
+        .filter((n) => n !== correctAnswer);
+      dispatch(setCorrectAnswer(correctAnswer));
+      shuffle(string);
+
+      const notesForAnswerButtons: [string, string, string, string] = [
+        correctAnswer,
+        string[0],
+        string[1],
+        string[2],
+      ];
+      shuffle(notesForAnswerButtons);
+
+      dispatch(setNoteButtonValues(notesForAnswerButtons));
+      dispatch(setCorrectAnswer(fretboard[randInt2][randInt1]));
+      dispatch(setPointers([[randInt1, randInt2]]));
+    }
   }, [dispatch]);
 
   useEffect(() => {
@@ -82,7 +95,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       </Grid>
       {/* <NoteButtons disabled={!isPracticeMode && timeLeft/1000 <= 0}/> */}
-      <NoteSlider/>
+      <NoteSlider />
     </Grid>
   );
 };

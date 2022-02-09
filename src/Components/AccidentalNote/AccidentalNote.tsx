@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Grid } from "theme-ui";
+import { Grid, SxProp } from "theme-ui";
 import { flat } from "./Flat";
 import { sharp } from "./Sharp";
 
@@ -8,12 +8,13 @@ interface IAccidentalNoteProps {
     flatNote:string;
 }
 
-const AccidentalNote: React.FunctionComponent<IAccidentalNoteProps> = (
-  {sharpNote,flatNote}
+const AccidentalNote: React.FunctionComponent<IAccidentalNoteProps & SxProp> = (
+  {sharpNote,flatNote, ...props}
 ) => {
   return (
-    <Grid
+    <span
       sx={{
+        display: "grid",
         fontFamily: "main",
         lineHeight: 1,
         height: "1.5em",
@@ -25,9 +26,10 @@ const AccidentalNote: React.FunctionComponent<IAccidentalNoteProps> = (
           height:"1em"
         },
       }}
+      {...props}
     >
       <span>{sharpNote}</span>{sharp}/<span>{flatNote}</span>{flat}
-    </Grid>
+    </span>
   );
 };
 

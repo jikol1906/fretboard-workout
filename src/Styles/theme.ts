@@ -18,6 +18,10 @@
           textTransform:'uppercase',
           fontSize:['1.1rem']
         },
+        noteSliderMessage: {
+          fontFamily:'main',
+          textTransform:'uppercase',
+        },
         stat: {
           fontFamily:'main',
           fontSize:['2.5rem','2.8rem',null,"4rem"]
