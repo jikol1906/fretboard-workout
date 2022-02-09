@@ -18,6 +18,13 @@ function getStringNumber(number: number) {
 }
 
 const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
+
+  const sliderRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    sliderRef.current?.focus()
+  },[])
+
   return (
     <Grid
       gap="0"
@@ -34,7 +41,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
         </Text>{" "}
         string
       </Text>
-      <Slider min="0" max="12" onChange={(e) => console.log(e.target.value)} />
+      <Slider ref={sliderRef} min="0" max="12" onChange={(e) => console.log(e.target.value)} />
       <Button>Place</Button>
     </Grid>
   );
