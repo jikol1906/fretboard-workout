@@ -6,6 +6,7 @@ import { Grid, Text } from "theme-ui";
 import {
   findNodeSetCorrectFret,
   findNodeSetString,
+  resetCorrectAndTotalAnswers,
   selectPracticeMode,
   selectTotalandCorrectAnswered,
   setCorrectAnswer,
@@ -15,7 +16,6 @@ import {
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
-  generateFretboardWithFlatsAndSharps,
   generateFretboardWithoutOpenStrings,
   getRandomIntInclusive,
   randomBool,
@@ -91,7 +91,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       dispatch(setPointers([]))
       dispatch(resetCorrectAndTotalAnswers())
     }
-  }, [dispatch,isPracticeMode,start,resetCorrectAndTotalAnswers,setPointers]);
+  }, [dispatch,isPracticeMode,start]);
 
   useEffect(() => {
     newRound();

@@ -3,7 +3,6 @@ import { Button, Grid } from "theme-ui";
 import {
   selectNoteButtons,
   selectCorrectAnswer,
-  selectWrongAnswerClicked,
   incrementCorrectAnswered,
   incrementTotalAnswered,
   setWrongAnswerClicked,
@@ -20,7 +19,6 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
   const dispatch = useAppDispatch();
   const buttons = useAppSelector(selectNoteButtons);
   const correctAnswer = useAppSelector(selectCorrectAnswer);
-  const wrongAnswerClicked = useAppSelector(selectWrongAnswerClicked);
 
   const btn1ref = useRef<HTMLButtonElement>(null);
   const btn2ref = useRef<HTMLButtonElement>(null);

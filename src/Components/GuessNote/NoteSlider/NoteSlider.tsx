@@ -39,7 +39,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
       dispatch(incrementTotalAnswered())
     }
         
-  },[pointers]);
+  },[pointers,correctFret,dispatch]);
 
   useEffect(() => {
     sliderRef.current?.focus();

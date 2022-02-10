@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Grid, SxProp } from "theme-ui";
+import { SxProp } from "theme-ui";
 import { flat } from "./Flat";
 import { sharp } from "./Sharp";
 
