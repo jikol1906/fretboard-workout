@@ -26,6 +26,9 @@
           fontFamily:'main'
         }
       },
+      shadows: {
+        default:"rgba(0, 0, 0, 0.35) 0px 5px 15px"
+      },
       forms: {
         label:{
           fontFamily: 'main',
