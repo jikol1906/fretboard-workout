@@ -11,7 +11,7 @@
       },
       breakpoints:["31.25em", "46.5em", "65.625em", "90em"],
       buttons:btnStyles,
-      space:["0","1.3rem","2.8rem","5rem"],
+      space:["0","1rem","2.7rem","5rem"],
       text: {
         default:{
           fontFamily:'main',
