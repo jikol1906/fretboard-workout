@@ -35,7 +35,7 @@ const buttonStyles: ThemeUIStyleObject = {
   bg: "transparent",
 };
 
-export const btnStyles = {
+let btnStyles: {[k:string] : any} = {
   primary: {
     ...buttonStyles,
     "&:hover,&:focus": {
@@ -63,5 +63,21 @@ export const btnStyles = {
       borderRightWidth:[null,null,null,'var(--border-width)'],
     }
 
-  }
+  },
 };
+
+const goBackBtn : ThemeUIStyleObject = {
+  ...btnReset,
+  position:'fixed',
+  width:'2.7rem',
+  left:'1.8rem',
+  top:'1.9rem',
+  'svg': {
+    width: '100%',
+    height: 'auto'
+  }
+}
+
+btnStyles.goBackBtn = goBackBtn;
+
+export {btnStyles}
