@@ -30,27 +30,16 @@ const ComingSoon: React.FunctionComponent<SxProp & IComingSoonProps> = ({
       {children}
       <Box
         sx={{
-          fontSize: [".9rem",null,"1.5rem"],
-          bg: "#F5ED77",
+          fontSize: [".9rem",null,"1.4rem"],
+          background: "linear-gradient(#FEFCAF, #FFFEDA)",
           position: "absolute",
+          borderRadius: "2% / 50%",
           p: "3em 2em",
           left:'50%',
           top:'80%',
           transform: 'translateX(-50%) rotate(5deg)',
           boxShadow: "default",
           zIndex:1,
-          '&::after': {
-            content: "''",
-            position: 'absolute',
-            top:'10%',
-            left:'50%',
-            transform:'translateX(-50%)',
-            display:'block',
-            height:'5px',
-            width:'5px',
-            bg:'black',
-            borderRadius:'999px'   
-          }
         }}
       >
         <span sx={{ fontFamily: "main", textTransform:'uppercase' }}>Coming Soon</span>
