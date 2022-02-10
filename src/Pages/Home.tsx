@@ -2,6 +2,7 @@
 
 import { NavLink } from "react-router-dom";
 import { Box, Flex, Grid } from "theme-ui";
+import ComingSoon from "../Components/ComingSoon/ComingSoon";
 import { btnStyles } from "../Styles/buttonStyles";
 
 import MainHeading from "../Typography/MainHeading";
@@ -12,8 +13,10 @@ function Home() {
       <Box margin="auto">
         <MainHeading>Fretboard Workout</MainHeading>
         <Grid gap={["1", null, "2"]} sx={{ justifyContent: "center" }}>
-          <NavLink to="guess-note" sx={btnStyles.primary}>Find node practice</NavLink>
-          <NavLink to="guess-note" sx={btnStyles.primary}>Guess node practie</NavLink>
+          <NavLink to="guess-note" sx={btnStyles.primary}>Guess node mode</NavLink>
+          <ComingSoon overlayBorderradius="999px">
+            <NavLink to="#" tabIndex={-1} sx={btnStyles.primary}>Find node mode</NavLink>
+          </ComingSoon>
         </Grid>
       </Box>
     </Flex>
