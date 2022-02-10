@@ -84,7 +84,12 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
     if (!isPracticeMode) {
       start();
     }
-  }, []);
+
+    return () => {
+      dispatch(setPointers([]))
+      dispatch(resetCorrectAndTotalAnswers())
+    }
+  }, [dispatch,isPracticeMode,start,resetCorrectAndTotalAnswers,setPointers]);
 
   useEffect(() => {
     newRound();
