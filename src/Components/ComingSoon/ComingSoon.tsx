@@ -16,7 +16,7 @@ const ComingSoon: React.FunctionComponent<SxProp & IComingSoonProps> = ({
         position: "relative",
         "&::after": {
           content: "''",
-          bg: "rgba(0,0,0,.4)",
+          bg: "#74747466",
           position: "absolute",
           top: 0,
           left: 0,

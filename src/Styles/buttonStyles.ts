@@ -2,6 +2,7 @@ import { ThemeUIStyleObject } from "theme-ui";
 
 const btnReset: ThemeUIStyleObject = {
   bg: "transparent",
+  display:'block',
   borderBottomWidth: 0,
   borderLeftWidth: 0,
   borderRightWidth: 0,
