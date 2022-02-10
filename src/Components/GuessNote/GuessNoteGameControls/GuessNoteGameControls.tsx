@@ -9,6 +9,7 @@ import {
   selectPracticeMode,
   selectTotalandCorrectAnswered,
   setCorrectAnswer,
+  setGameStarted,
   setNoteButtonValues,
   setPointers,
 } from "../../../redux/guessNoteSlice";
@@ -20,6 +21,7 @@ import {
   randomBool,
   shuffle,
 } from "../../../Utils/Utils";
+import GoBackButton from "../../GoBackButton/GoBackButton";
 import { NoteButtons } from "../NoteButtons/NoteButtons";
 import NoteSlider from "../NoteSlider/NoteSlider";
 
@@ -114,6 +116,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         gridTemplateColumns: "1fr minmax(auto,100rem) 1fr",
       }}
     >
+      <GoBackButton onClick={_ => dispatch(setGameStarted(false))}/>
       <Grid
         gap="0"
         variant="equalWidths"
