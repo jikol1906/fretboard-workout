@@ -69,13 +69,13 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
       dispatch(setWrongAnswerClicked(false));
       dispatch(incrementCorrectAnswered());
       dispatch(incrementTotalAnswered());
+      setWrongClickedButtons([])
     } else {
       setWrongClickedButtons(prev => {
         prev[btnNumber] = true
-        return prev
+        return [...prev]
       })
-      // dispatch(setWrongAnswerClicked(true));
-      // dispatch(incrementTotalAnswered());
+      dispatch(incrementTotalAnswered());
     }
   };
 
