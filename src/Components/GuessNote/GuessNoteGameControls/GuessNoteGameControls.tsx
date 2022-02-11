@@ -95,7 +95,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
 
   useEffect(() => {
     newRound();
-  }, [newRound, total]);
+  }, [newRound, correct]);
 
   let currentMode;
 
