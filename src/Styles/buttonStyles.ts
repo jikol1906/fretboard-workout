@@ -51,6 +51,7 @@ let btnStyles: {[k:string] : any} = {
   },
   noteBtn: {
     ...btnReset,
+    position:'relative',
     color:'text',
     display:'flex',
     justifyContent:'center',
