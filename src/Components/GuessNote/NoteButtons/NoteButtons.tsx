@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { Button, Grid } from "theme-ui";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Box, Button, Grid } from "theme-ui";
 import {
   selectNoteButtons,
   selectCorrectAnswer,
@@ -9,6 +9,7 @@ import {
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
+import WrongNoteClickedCross from "../../WrongNoteClickedCross/WrongNoteClickedCross";
 import { noteButtonGridStyles } from "../GuessNoteGameControls/GuessNoteGameControlsStyles";
 
 interface INoteButtonsProps {
@@ -25,14 +26,43 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
   const btn2ref = useRef<HTMLButtonElement>(null);
   const btn3ref = useRef<HTMLButtonElement>(null);
   const btn4ref = useRef<HTMLButtonElement>(null);
+  
+  const [b1, b2, b3, b4] = useMemo(() => {
+    const wrongButtonClickedCross = (
+      <Box
+        sx={{
+          position: "absolute",
+          width: ["12rem","15rem"],
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+        }}
+      >
+        <WrongNoteClickedCross />
+      </Box>
+    );
+    return buttons.map((b, i) => {
+      let toReturn;
 
-  const [b1, b2, b3, b4] = buttons.map((b) => {
-    if (b.includes("#")) {
-      const [sharp, flat] = b.split("/").map(n => n.replace(/#|b/,""));
-      return <AccidentalNote sharpNote={sharp} flatNote={flat} />;
-    }
-    return <span style={{height:'1.5em'}}>{b}</span>;
-  });
+      if (b.includes("#")) {
+        const [sharp, flat] = b.split("/").map((n) => n.replace(/#|b/, ""));
+        toReturn = <AccidentalNote sharpNote={sharp} flatNote={flat} />;
+      } else {
+        toReturn = <span style={{ height: "1.5em" }}>{b}</span>;
+      }
+
+      return wrongClickedButtons[i] ? (
+        <>
+          {toReturn}
+          {wrongButtonClickedCross}
+        </>
+      ) : (
+        toReturn
+      );
+    });
+  }, [buttons, wrongClickedButtons]);
+
+
 
   const btnClicked = (val: string,btnNumber:number) => {
     if (val === correctAnswer) {
