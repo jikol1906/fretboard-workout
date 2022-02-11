@@ -5,7 +5,6 @@ import {
   selectCorrectAnswer,
   incrementCorrectAnswered,
   incrementTotalAnswered,
-  setWrongAnswerClicked,
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
@@ -66,7 +65,6 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
 
   const btnClicked = (val: string,btnNumber:number) => {
     if (val === correctAnswer) {
-      dispatch(setWrongAnswerClicked(false));
       dispatch(incrementCorrectAnswered());
       dispatch(incrementTotalAnswered());
       setWrongClickedButtons([])
