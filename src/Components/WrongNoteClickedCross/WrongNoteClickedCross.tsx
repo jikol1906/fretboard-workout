@@ -33,7 +33,7 @@ const WrongNoteClickedCross: React.FunctionComponent = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g opacity="0.6">
+      <g opacity="1">
         <path
           d="M101.524 3.23816L2.4762 52.762"
           stroke="#FF7C1E"
