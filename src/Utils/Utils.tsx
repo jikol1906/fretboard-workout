@@ -1,4 +1,4 @@
-import { Fretboard, FretboardPosition } from "./Types";
+import { Fretboard, Note } from "./Types";
 
 export function getRandomIntInclusive(min: number, max: number) {
   min = Math.ceil(min);
@@ -95,7 +95,7 @@ export function generateFretboardWithFlatsAndSharps(): Fretboard {
   const res: Fretboard = [];
 
   for (let i = 0; i < withSharps.length; i++) {
-    const string: FretboardPosition[] = [];
+    const string: Note[] = [];
     for (let j = 0; j < withSharps[i].length; j++) {
       if (withSharps[i][j] !== withFlats[i][j]) {
         string.push(`${withSharps[i][j]}/${withFlats[i][j]}`);

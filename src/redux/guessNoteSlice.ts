@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FretboardPosition, PointerPosition } from "../Utils/Types";
+import { Note, PointerPosition } from "../Utils/Types";
 import { RootState } from "./store";
 
 
@@ -11,7 +11,7 @@ export interface AppState {
   fretboardRotation:number;
   pointers: PointerPosition[];
   correctAnswer:string;
-  noteButtonValues:[FretboardPosition,FretboardPosition,FretboardPosition,FretboardPosition]
+  noteButtonValues:[Note,Note,Note,Note]
   totalAnswered: number;
   correctAnswered: number;
   findNodeMode: {
@@ -55,7 +55,7 @@ export const guessNoteSlice = createSlice({
     setGameStarted(state,action: PayloadAction<boolean>) {
       state.gameStarted = action.payload
     },
-    setNoteButtonValues(state,action: PayloadAction<[FretboardPosition,FretboardPosition,FretboardPosition,FretboardPosition]>) {
+    setNoteButtonValues(state,action: PayloadAction<[Note,Note,Note,Note]>) {
       state.noteButtonValues = action.payload
     },
     setCorrectAnswer(state,action: PayloadAction<string>) {
