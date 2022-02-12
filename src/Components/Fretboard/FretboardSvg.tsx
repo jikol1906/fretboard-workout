@@ -11,6 +11,7 @@ const FretboardSvg: React.FunctionComponent = () => {
   const style : ThemeUIStyleObject = {
     width: "100%",
     height: "auto",
+    display: 'block',
     ...(hideCircles && {'& circle' : {display:'none'}})
   }
   
