@@ -10,6 +10,7 @@ export interface AppState {
   hideCircles:boolean,
   fretboardRotation:number;
   pointers: FretboardPosition[];
+  wrongClickedCrosses: FretboardPosition[]; 
   correctAnswer:string;
   noteButtonValues:[Note,Note,Note,Note]
   totalAnswered: number;
@@ -26,6 +27,7 @@ const initialState: AppState = {
   practiceMode:false,
   fretboardRotation:0,
   pointers: [],
+  wrongClickedCrosses:[],
   correctAnswer:"",
   noteButtonValues:["","","",""],
   totalAnswered: 0,
@@ -51,6 +53,9 @@ export const guessNoteSlice = createSlice({
     },
     setPointers(state,action: PayloadAction<[number,number][]>) {
       state.pointers = action.payload
+    },
+    setWrongClickedCrosses(state,action: PayloadAction<[number,number][]>) {
+      state.wrongClickedCrosses = action.payload
     },
     setGameStarted(state,action: PayloadAction<boolean>) {
       state.gameStarted = action.payload
@@ -92,6 +97,7 @@ export const {
   setNoteButtonValues,
   setCorrectAnswer,
   setPracticemode,
+  setWrongClickedCrosses,
   incrementTotalAnswered,
   resetCorrectAndTotalAnswers,
   findNodeSetString,
@@ -105,6 +111,7 @@ export const selectHideFretboardCircles = (state: RootState) => state.app.hideCi
 export const selectPracticeMode = (state: RootState) => state.app.practiceMode;
 export const selectFretboardRotation = (state: RootState) => state.app.fretboardRotation;
 export const selectPointers = (state: RootState) => state.app.pointers;
+export const selectWrongClickedCrosses = (state: RootState) => state.app.wrongClickedCrosses;
 export const selectGameStarted = (state: RootState) => state.app.gameStarted;
 export const selectNoteButtons = (state: RootState) => state.app.noteButtonValues;
 export const selectTotalandCorrectAnswered = (state: RootState) => [state.app.totalAnswered, state.app.correctAnswered];
