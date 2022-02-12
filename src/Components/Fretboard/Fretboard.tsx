@@ -35,17 +35,15 @@ const Fretboard: React.FunctionComponent = (props) => {
     <Box
       sx={{
         alignSelf:"end",
-        height:"17em",
         fontSize:"min(1.4vw,1.6rem)",
         position: 'relative',
-        top:"calc(var(--rotation) * 0.05em)",
       }}
       style={styles}
     >
       <Box
         sx={{
           margin: "0 auto",
-          width:'70em',
+          width:'67.5em',
           position: "relative",
           transform: "perspective(650px) translateZ(calc(-1 * var(--rotation) * .15em)) rotateX(calc(var(--rotation) * 1deg))",
         }}
