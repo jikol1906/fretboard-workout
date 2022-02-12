@@ -23,8 +23,7 @@ export const pointerStyles: ThemeUIStyleObject = {
 
 export const fretboardElementContainerStyles : ThemeUIStyleObject = {
   position: "absolute",
-  top: "calc(2.97em * var(--y) + 1.3em)",
-  left: "calc(5.85em * var(--x) + 2.9em)",
+  top: "calc(2.87em * var(--y) + 1.3em)",
+  left: "calc(5.6em * var(--x) + 2.9em)",
   transform: "translate(-50%,-50%)",
 }
-
