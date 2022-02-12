@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Note, PointerPosition } from "../Utils/Types";
+import { Note, FretboardPosition } from "../Utils/Types";
 import { RootState } from "./store";
 
 
@@ -9,7 +9,7 @@ export interface AppState {
   practiceMode:boolean,
   hideCircles:boolean,
   fretboardRotation:number;
-  pointers: PointerPosition[];
+  pointers: FretboardPosition[];
   correctAnswer:string;
   noteButtonValues:[Note,Note,Note,Note]
   totalAnswered: number;
