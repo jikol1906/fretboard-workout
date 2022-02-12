@@ -67,6 +67,10 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
     }
   }, [pointers]);
 
+  useEffect(() => {
+    return () => {dispatch(setWrongClickedCrosses([]))}
+  },[])
+
   const sliderHandler = useCallback((e: React.FormEvent<HTMLInputElement>) => {
     const currentString = pointers[0][1];
     dispatch(setPointers([[+e.currentTarget.value, currentString]]));
