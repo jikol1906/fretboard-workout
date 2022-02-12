@@ -44,7 +44,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
 
     sliderRef.current?.focus();
         
-  },[pointers,correctFret,dispatch,sliderVal,stringNumber]);
+  },[pointers,correctFret,dispatch,sliderVal,stringNumber,wrongClickedCrossesRedux]);
 
   useEffect(() => {
     sliderRef.current?.focus();
@@ -69,7 +69,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
 
   useEffect(() => {
     return () => {dispatch(setWrongClickedCrosses([]))}
-  },[])
+  },[dispatch])
 
   const sliderHandler = useCallback((e: React.FormEvent<HTMLInputElement>) => {
     const currentString = pointers[0][1];
