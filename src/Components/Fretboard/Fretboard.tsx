@@ -6,7 +6,7 @@ import {
 } from "../../redux/guessNoteSlice";
 import { useAppSelector } from "../../redux/hooks";
 import FretboardSvg from "./FretboardSvg";
-import { pointerStyles } from "./PointerStyles";
+import { fretboardElementContainerStyles, pointerStyles } from "./PointerStyles";
 
 const Fretboard: React.FunctionComponent = (props) => {
   const rotation = useAppSelector(selectFretboardRotation);
@@ -14,7 +14,9 @@ const Fretboard: React.FunctionComponent = (props) => {
 
   const pointers = pointersRedux.map(([x, y]) => { 
     const position = { "--x": x, "--y": y } as React.CSSProperties;
-    return <div sx={pointerStyles} style={position} key={`${x}${y}`} />;
+    return <Box sx={fretboardElementContainerStyles} style={position} key={`${x}${y}`} >
+      <div sx={pointerStyles} />
+    </Box>;
   });
 
   const styles = { "--rotation": rotation } as React.CSSProperties;

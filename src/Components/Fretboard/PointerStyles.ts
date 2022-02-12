@@ -17,9 +17,12 @@ export const pointerStyles: ThemeUIStyleObject = {
   height: "1.2em",
   width: "1.2em",
   borderRadius: "50%",
-  top: "calc(16.6% * var(--y,0) + 0.6em)",
-  left: "calc((100% / 12) * var(--x,0) + 2em)",
   backgroundColor: " yellow",
   animation: `${pulse} .3s infinite alternate`,
-  position: "absolute",
 };
+
+export const fretboardElementContainerStyles : ThemeUIStyleObject = {
+  top: "calc(16.6% * var(--y,0) + 0.6em)",
+  left: "calc((100% / 12) * var(--x,0) + 2em)", 
+  position: "absolute",
+}
