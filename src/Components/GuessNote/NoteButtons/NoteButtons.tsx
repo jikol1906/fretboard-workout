@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Box, Button, Grid } from "theme-ui";
 import {
   selectNoteButtons,
@@ -8,6 +8,7 @@ import {
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
+import useEventListener from "../../Hooks/useEventListener";
 import WrongNoteClickedCross from "../../WrongNoteClickedCross/WrongNoteClickedCross";
 import { noteButtonGridStyles } from "../GuessNoteGameControls/GuessNoteGameControlsStyles";
 
@@ -20,11 +21,27 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
   const buttons = useAppSelector(selectNoteButtons);
   const correctAnswer = useAppSelector(selectCorrectAnswer);
   const [wrongClickedButtons,setWrongClickedButtons] = useState([false,false,false,false])
-
   const btn1ref = useRef<HTMLButtonElement>(null);
   const btn2ref = useRef<HTMLButtonElement>(null);
   const btn3ref = useRef<HTMLButtonElement>(null);
   const btn4ref = useRef<HTMLButtonElement>(null);
+  
+  useEventListener("keydown",(e) => {
+    switch (e.key) {
+      case "1":
+        btn1ref.current?.click();
+        break;
+      case "2":
+        btn2ref.current?.click();
+        break;
+      case "3":
+        btn3ref.current?.click();
+        break;
+      case "4":
+        btn4ref.current?.click();
+    }
+  })
+
   
   const [b1, b2, b3, b4] = useMemo(() => {
     const wrongButtonClickedCross = (
@@ -77,28 +94,6 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
     }
   };
 
-  useEffect(() => {
-    const handleKeydown = (ev: KeyboardEvent) => {
-      switch (ev.key) {
-        case "1":
-          btn1ref.current?.click();
-          break;
-        case "2":
-          btn2ref.current?.click();
-          break;
-        case "3":
-          btn3ref.current?.click();
-          break;
-        case "4":
-          btn4ref.current?.click();
-      }
-    };
-    document.addEventListener("keydown", handleKeydown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeydown);
-    };
-  }, [buttons]);
 
   return (
     <Grid sx={noteButtonGridStyles} gap="0">
