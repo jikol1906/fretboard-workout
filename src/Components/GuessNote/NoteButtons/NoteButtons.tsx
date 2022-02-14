@@ -5,6 +5,8 @@ import {
   selectCorrectAnswer,
   incrementCorrectAnswered,
   incrementTotalAnswered,
+  selectWrongClickedButtons,
+  setWrongClickedButtons,
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
@@ -17,7 +19,7 @@ export const NoteButtons: React.FC = () => {
   const dispatch = useAppDispatch();
   const buttons = useAppSelector(selectNoteButtons);
   const correctAnswer = useAppSelector(selectCorrectAnswer);
-  const [wrongClickedButtons,setWrongClickedButtons] = useState([false,false,false,false])
+  const wrongClickedButtons = useAppSelector(selectWrongClickedButtons)
   const btn1ref = useRef<HTMLButtonElement>(null);
   const btn2ref = useRef<HTMLButtonElement>(null);
   const btn3ref = useRef<HTMLButtonElement>(null);
@@ -81,12 +83,12 @@ export const NoteButtons: React.FC = () => {
     if (val === correctAnswer) {
       dispatch(incrementCorrectAnswered());
       dispatch(incrementTotalAnswered());
-      setWrongClickedButtons([])
+      dispatch(setWrongClickedButtons([false,false,false,false]))
     } else {
-      setWrongClickedButtons(prev => {
-        prev[btnNumber] = true
-        return [...prev]
-      })
+      
+      const wrongClickedButtonsCopy = [...wrongClickedButtons] as [boolean,boolean,boolean,boolean]
+      wrongClickedButtonsCopy[btnNumber] = true;
+      dispatch(setWrongClickedButtons([...wrongClickedButtonsCopy]))
       dispatch(incrementTotalAnswered());
     }
   };
