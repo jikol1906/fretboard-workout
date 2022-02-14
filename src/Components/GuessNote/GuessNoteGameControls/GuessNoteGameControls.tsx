@@ -137,7 +137,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         </Text>
         <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       </Grid>
-      {(timeLeft <= 0 && !isPracticeMode) && <Gamestats onTryAgainClicked={restartGame} />}
+      <Gamestats show={timeLeft <= 0 && !isPracticeMode} onTryAgainClicked={restartGame} />
       {currentMode}
     </Grid>
   );

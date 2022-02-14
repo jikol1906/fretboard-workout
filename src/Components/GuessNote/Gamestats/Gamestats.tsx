@@ -7,14 +7,15 @@ import { useAppSelector } from "../../../redux/hooks";
 import Modal from "../../Modal/Modal";
 
 interface IGamestatsProps {
-    onTryAgainClicked:() => void
+    onTryAgainClicked:() => void;
+    show:boolean
 }
 
-const Gamestats: React.FunctionComponent<IGamestatsProps> = ({onTryAgainClicked}) => {
+const Gamestats: React.FunctionComponent<IGamestatsProps> = ({onTryAgainClicked,show}) => {
   const dispatch = useDispatch();
   const [total, correct] = useAppSelector(selectTotalandCorrectAnswered);
   return (
-  <Modal show={true}>
+  <Modal show={show}>
     <Grid
       gap="3"
       sx={{
