@@ -13,6 +13,7 @@ import {
   setGameStarted,
   setNoteButtonValues,
   setPointers,
+  setWrongClickedCrosses,
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import {
@@ -81,6 +82,12 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       setMode("guess")
     }
   }, [dispatch]);
+
+  const restartGame = useCallback(() => {
+    start(60000)
+    dispatch(resetCorrectAndTotalAnswers())
+    dispatch(setWrongClickedCrosses([]))
+  },[dispatch,start])
 
   useEffect(() => {
     if (!isPracticeMode) {
