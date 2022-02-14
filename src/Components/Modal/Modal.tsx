@@ -11,6 +11,7 @@ ReactModal.setAppElement('#root');
 const Modal: React.FunctionComponent<IModalProps> = ({ show, children }) => {
   return (
     <ReactModal
+      closeTimeoutMS={300}
       isOpen={show}
       style={{
         overlay: {
