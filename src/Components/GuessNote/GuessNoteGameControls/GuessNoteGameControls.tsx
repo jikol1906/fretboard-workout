@@ -23,6 +23,7 @@ import {
   shuffle,
 } from "../../../Utils/Utils";
 import GoBackButton from "../../GoBackButton/GoBackButton";
+import Gamestats from "../Gamestats/Gamestats";
 import { NoteButtons } from "../NoteButtons/NoteButtons";
 import NoteSlider from "../NoteSlider/NoteSlider";
 
@@ -134,6 +135,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
         </Text>
         <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       </Grid>
+      {(timeLeft <= 0 && !isPracticeMode) && <Gamestats onTryAgainClicked={restartGame} />}
       {currentMode}
     </Grid>
   );
