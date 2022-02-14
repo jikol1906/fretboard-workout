@@ -13,6 +13,7 @@ import {
   setGameStarted,
   setNoteButtonValues,
   setPointers,
+  setWrongClickedButtons,
   setWrongClickedCrosses,
 } from "../../../redux/guessNoteSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
@@ -88,6 +89,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
     start(60000)
     dispatch(resetCorrectAndTotalAnswers())
     dispatch(setWrongClickedCrosses([]))
+    dispatch(setWrongClickedButtons([false,false,false,false,]))
   },[dispatch,start])
 
   useEffect(() => {
