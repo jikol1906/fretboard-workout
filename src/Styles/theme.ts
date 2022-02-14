@@ -11,7 +11,7 @@
       },
       breakpoints:["31.25em", "46.5em", "65.625em", "90em"],
       buttons:btnStyles,
-      space:["0","1rem","2.7rem","5rem"],
+      space:["0","1rem","2rem","5rem"],
       text: {
         default:{
           fontFamily:'main',
@@ -23,7 +23,10 @@
           fontSize:['2.4rem','3.5rem',null,"4.5rem"]
         },
         heading: {
-          fontFamily:'main'
+          fontFamily:'main',
+          textTransform:'uppercase',
+          letterSpacing:'2px',
+          fontSize:['3rem']
         }
       },
       shadows: {
