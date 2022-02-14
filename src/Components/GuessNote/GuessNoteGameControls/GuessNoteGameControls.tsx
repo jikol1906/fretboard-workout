@@ -101,7 +101,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
 
   switch(mode) {
     case 'guess':
-      currentMode = <NoteButtons disabled={!isPracticeMode && timeLeft/1000 <= 0}/>
+      currentMode = <NoteButtons />
       break;
     case 'find':
       currentMode = <NoteSlider />

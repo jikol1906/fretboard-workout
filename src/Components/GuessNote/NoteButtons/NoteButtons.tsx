@@ -12,11 +12,8 @@ import useEventListener from "../../Hooks/useEventListener";
 import WrongNoteClickedCross from "../../WrongNoteClickedCross/WrongNoteClickedCross";
 import { noteButtonGridStyles } from "../GuessNoteGameControls/GuessNoteGameControlsStyles";
 
-interface INoteButtonsProps {
-  disabled: boolean;
-}
 
-export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
+export const NoteButtons: React.FC = () => {
   const dispatch = useAppDispatch();
   const buttons = useAppSelector(selectNoteButtons);
   const correctAnswer = useAppSelector(selectCorrectAnswer);
@@ -97,10 +94,10 @@ export const NoteButtons: React.FC<INoteButtonsProps> = ({ disabled }) => {
 
   return (
     <Grid sx={noteButtonGridStyles} gap="0">
-      <Button disabled={disabled || wrongClickedButtons[0]} ref={btn1ref} onClick={() => btnClicked(buttons[0],0)} style={{gridArea: "b1"}} variant="noteBtn">{b1}</Button>
-      <Button disabled={disabled || wrongClickedButtons[1]} ref={btn2ref} onClick={() => btnClicked(buttons[1],1)} style={{gridArea: "b2"}} variant="noteBtn">{b2}</Button>
-      <Button disabled={disabled || wrongClickedButtons[2]} ref={btn3ref} onClick={() => btnClicked(buttons[2],2)} style={{gridArea: "b3"}} variant="noteBtn">{b3}</Button>
-      <Button disabled={disabled || wrongClickedButtons[3]} ref={btn4ref} onClick={() => btnClicked(buttons[3],3)} style={{gridArea: "b4"}} variant="noteBtn">{b4}</Button>
+      <Button disabled={wrongClickedButtons[0]} ref={btn1ref} onClick={() => btnClicked(buttons[0],0)} style={{gridArea: "b1"}} variant="noteBtn">{b1}</Button>
+      <Button disabled={wrongClickedButtons[1]} ref={btn2ref} onClick={() => btnClicked(buttons[1],1)} style={{gridArea: "b2"}} variant="noteBtn">{b2}</Button>
+      <Button disabled={wrongClickedButtons[2]} ref={btn3ref} onClick={() => btnClicked(buttons[2],2)} style={{gridArea: "b3"}} variant="noteBtn">{b3}</Button>
+      <Button disabled={wrongClickedButtons[3]} ref={btn4ref} onClick={() => btnClicked(buttons[3],3)} style={{gridArea: "b4"}} variant="noteBtn">{b4}</Button>
     </Grid>
   );
 };
