@@ -86,7 +86,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
 
   return (
     <Grid
-      gap="2"
+      gap="3"
       sx={{ gridColumn: "2/3", alignContent: "center", justifyItems: "center"}}
     >
       <Text as="p" sx={{ display: "flex", alignItems: "center" }}>
