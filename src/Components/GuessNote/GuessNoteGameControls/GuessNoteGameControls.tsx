@@ -123,16 +123,11 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
       sx={guessNoteGameControlsGridStyles}
     >
       <GoBackButton onClick={_ => dispatch(setGameStarted(false))}/>
-      <Grid
-        gap="0"
-        variant="equalWidths"
-        sx={{ justifyItems: "center", gridColumn: "2/3" }}
-      >
-        <Text variant="stat">
+
+        <Text variant="stat" style={{gridArea:'stat1', justifySelf:'center', alignSelf:'center'}}>
           {correct}/{total}
         </Text>
-        <Text variant="stat">{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
-      </Grid>
+        <Text variant="stat" style={{gridArea:'stat2', justifySelf:'center', alignSelf:'center'}}>{isPracticeMode ? "∞" : timeLeft / 1000}</Text>
       <Gamestats show={timeLeft <= 0 && !isPracticeMode} onTryAgainClicked={restartGame} />
       {currentMode}
     </Grid>
