@@ -5,6 +5,8 @@
       fontFamily:'main',
       textTransform:'uppercase',
     }
+    export const maxHeightbpSmall = '@media (max-height: 34.312em)'
+
     export const theme: Theme = {
       fonts: {
         main:"'Sriracha', cursive, sans-serif",
