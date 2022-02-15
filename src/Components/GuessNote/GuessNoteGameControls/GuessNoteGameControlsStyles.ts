@@ -1,5 +1,6 @@
 import { ThemeUIStyleObject } from "theme-ui";
-import { maxHeightbpSmall } from "../../../Styles/theme";
+import { maxHeightbpSmall } from "../../../Styles/maxHeightMqs";
+
 
 export const guessNoteGameControlsGridStyles: ThemeUIStyleObject = {
   

@@ -6,7 +6,7 @@ import {
   selectWrongClickedCrosses,
 } from "../../redux/guessNoteSlice";
 import { useAppSelector } from "../../redux/hooks";
-import { maxHeightbpSmall } from "../../Styles/theme";
+import { maxHeightbpSmall } from "../../Styles/maxHeightMqs";
 import WrongNoteClickedCross from "../WrongNoteClickedCross/WrongNoteClickedCross";
 import FretboardSvg from "./FretboardSvg";
 import { fretboardElementContainerStyles, pointerStyles } from "./PointerStyles";

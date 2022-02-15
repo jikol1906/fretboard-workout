@@ -1,0 +1,1 @@
+export const maxHeightbpSmall = '@media (max-height: 34.312em)'
