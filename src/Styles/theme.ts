@@ -1,6 +1,10 @@
-    import type { Theme } from 'theme-ui'
+    import type { Theme, ThemeUICSSObject } from 'theme-ui'
     import { btnStyles } from './buttonStyles'
 
+    const textBaseStyle : ThemeUICSSObject = {
+      fontFamily:'main',
+      textTransform:'uppercase',
+    }
     export const theme: Theme = {
       fonts: {
         main:"'Sriracha', cursive, sans-serif",
@@ -14,17 +18,15 @@
       space:["0","1rem","2rem","5rem"],
       text: {
         default:{
-          fontFamily:'main',
-          textTransform:'uppercase',
-          fontSize:['1.1rem',"1.5rem","2.5rem"]          
+          ...textBaseStyle,
+          fontSize:['1.1rem',"1.5rem","2.3rem"]          
         },
         stat: {
           fontFamily:'main',
           fontSize:['2.4rem','3.5rem',null,"4.5rem"]
         },
         heading: {
-          fontFamily:'main',
-          textTransform:'uppercase',
+          ...textBaseStyle,
           letterSpacing:'2px',
           fontSize:['3rem']
         }
