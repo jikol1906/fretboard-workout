@@ -27,6 +27,7 @@ import GoBackButton from "../../GoBackButton/GoBackButton";
 import Gamestats from "../Gamestats/Gamestats";
 import { NoteButtons } from "../NoteButtons/NoteButtons";
 import NoteSlider from "../NoteSlider/NoteSlider";
+import { guessNoteGameControlsGridStyles } from "./GuessNoteGameControlsStyles";
 
 const fretboard = generateFretboardWithoutOpenStrings();
 
@@ -119,12 +120,7 @@ const GuessNoteGameControls: React.FunctionComponent = (props) => {
 
   return (
     <Grid
-      sx={{
-        gridTemplateRows: "auto 1fr",
-        rowGap: "1",
-        columnGap: "0",
-        gridTemplateColumns: "1fr minmax(auto,100rem) 1fr",
-      }}
+      sx={guessNoteGameControlsGridStyles}
     >
       <GoBackButton onClick={_ => dispatch(setGameStarted(false))}/>
       <Grid
