@@ -12,7 +12,8 @@ import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
 import useEventListener from "../../Hooks/useEventListener";
 import WrongNoteClickedCross from "../../WrongNoteClickedCross/WrongNoteClickedCross";
-import { noteButtonGridStyles } from "../GuessNoteGameControls/GuessNoteGameControlsStyles";
+import { noteButtonGridStyles } from "./NoteButtonsStyles";
+
 
 
 export const NoteButtons: React.FC = () => {
