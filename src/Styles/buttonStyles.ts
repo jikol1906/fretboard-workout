@@ -1,4 +1,6 @@
 import { ThemeUIStyleObject } from "theme-ui";
+import { maxHeightbpSmall } from "./maxHeightMqs";
+
 
 const btnReset: ThemeUIStyleObject = {
   bg: "transparent",
@@ -63,6 +65,9 @@ let btnStyles: {[k:string] : any} = {
       borderStyle:'solid',
       borderColor:'text',
       borderRightWidth:[null,null,null,'var(--border-width)'],
+    },
+    [maxHeightbpSmall]: {
+      fontSize: "2.2rem",
     }
 
   },

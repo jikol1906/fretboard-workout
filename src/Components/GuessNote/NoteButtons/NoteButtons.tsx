@@ -48,7 +48,7 @@ export const NoteButtons: React.FC = () => {
       <Box
         sx={{
           position: "absolute",
-          width: ["12rem","15rem"],
+          width: "3.7em",
           top: "50%",
           left: "50%",
           transform: "translate(-50%,-50%)",

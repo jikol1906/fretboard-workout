@@ -1,5 +1,6 @@
     import type { Theme, ThemeUICSSObject } from 'theme-ui'
     import { btnStyles } from './buttonStyles'
+import { maxHeightbpSmall } from './maxHeightMqs'
     
     const textBaseStyle : ThemeUICSSObject = {
       fontFamily:'main',
@@ -21,11 +22,17 @@
       text: {
         default:{
           ...textBaseStyle,
-          fontSize:['1.1rem',"1.5rem","2.3rem"]          
+          fontSize:['1.1rem',"1.5rem","2.3rem"],
+          [maxHeightbpSmall]: {
+            fontSize:'1rem'
+          }
         },
         stat: {
           fontFamily:'main',
-          fontSize:['2.4rem','3.5rem',null,"4.5rem"]
+          fontSize:['2.4rem','3.5rem',null,"4.5rem"],
+          [maxHeightbpSmall]: {
+            fontSize:'2rem'
+          }
         },
         heading: {
           ...textBaseStyle,

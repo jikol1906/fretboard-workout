@@ -21,7 +21,7 @@ export const guessNoteGameControlsGridStyles: ThemeUIStyleObject = {
     gridTemplateAreas:`
     'stat1 control   control stat2'
     `,
-    gridTemplateColumns:['1fr 4fr 4fr 1fr','1fr 2fr 2fr 1fr'],
+    gridTemplateColumns:'repeat(4,1fr)',
     gridTemplateRows:'1fr',
   }
 
