@@ -8,6 +8,7 @@ import GuessNoteMenu from "../Components/GuessNote/GuessNoteMenu";
 
 import { selectGameStarted } from "../redux/guessNoteSlice";
 import { useAppSelector } from "../redux/hooks";
+import { maxHeightbpSmall } from "../Styles/maxHeightMqs";
 
 const GuessNote: React.FunctionComponent = () => {
   const gameStarted = useAppSelector(selectGameStarted);
@@ -19,6 +20,9 @@ const GuessNote: React.FunctionComponent = () => {
         gridTemplateRows: "1fr 1fr",
         padding: "2",
         gap: "2",
+        [maxHeightbpSmall]: {
+          gridTemplateRows: "auto 1fr",
+        }
       }}
     >
       {!gameStarted && <GoBackButton onClick={_ => navigate("/")}/>}
