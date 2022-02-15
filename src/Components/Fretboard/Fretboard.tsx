@@ -25,7 +25,7 @@ const Fretboard: React.FunctionComponent = (props) => {
 
   const wrongClickedCrosses = wrongClickedCrossesRedux.map(([x,y]) => {
     const position = { "--x": x, "--y": y } as React.CSSProperties;
-    return <Box sx={{...fretboardElementContainerStyles, width:['2rem','5rem']}} style={position} key={`${x}${y}`} >
+    return <Box sx={{...fretboardElementContainerStyles, width:'4em'}} style={position} key={`${x}${y}`} >
       <WrongNoteClickedCross/>
     </Box>
   }) 
