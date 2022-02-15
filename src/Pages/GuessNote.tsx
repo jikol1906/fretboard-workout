@@ -17,7 +17,7 @@ const GuessNote: React.FunctionComponent = () => {
       sx={{
         height: "100%",
         gridTemplateRows: "1fr 1fr",
-        padding: "1",
+        padding: "2",
         gap: "2",
       }}
     >
