@@ -1,7 +1,16 @@
 @import-normalize;
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
-html,body,#root {
+html {
+    min-height: 100%;
+    display: flex;
+}
+
+body {
+    flex: 1;
+}
+
+#root {
     height: 100%;
 }
 
