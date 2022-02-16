@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Box } from "theme-ui";
 import {
+  selectFretboardRotationCenter,
   selectFretboardRotationX,
   selectPointers,
   selectWrongClickedCrosses,
@@ -13,9 +14,10 @@ import { fretboardElementContainerStyles, pointerStyles } from "./PointerStyles"
 
 const Fretboard: React.FunctionComponent = (props) => {
   const rotationX = useAppSelector(selectFretboardRotationX);
+  const rotationCenter = useAppSelector(selectFretboardRotationCenter);
   const pointersRedux = useAppSelector(selectPointers);
   const wrongClickedCrossesRedux = useAppSelector(selectWrongClickedCrosses);
-
+  
   const pointers = pointersRedux.map(([x, y]) => { 
     const position = { "--x": x, "--y": y } as React.CSSProperties;
     return <Box sx={fretboardElementContainerStyles} style={position} key={`${x}${y}`} >
@@ -30,7 +32,10 @@ const Fretboard: React.FunctionComponent = (props) => {
     </Box>
   }) 
 
-  const styles = { "--rotationX": rotationX } as React.CSSProperties;
+  const styles = {
+    "--rotationX": rotationX,
+    "--rotationCenter": rotationCenter,
+  } as React.CSSProperties;
 
   return (
     <Box
@@ -50,7 +55,7 @@ const Fretboard: React.FunctionComponent = (props) => {
           margin: "0 auto",
           width:'67.5em',
           position: "relative",
-          transform: "perspective(650px) translateZ(calc(-1 * var(--rotationX) * .15em)) rotateX(calc(var(--rotationX) * 1deg))",
+          transform: "perspective(650px) translateZ(calc(-1 * var(--rotationX) * .15em)) rotateX(calc(var(--rotationX) * 1deg)) rotate(calc(var(--rotationCenter) * 1deg))",
         }}
       >
         <FretboardSvg/>
