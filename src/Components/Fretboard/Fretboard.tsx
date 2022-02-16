@@ -36,7 +36,7 @@ const Fretboard: React.FunctionComponent = (props) => {
     <Box
       sx={{
         alignSelf:"end",
-        fontSize:["5px","7.2px","10.6px","13.3px"],
+        fontSize:["5px","7.2px","10.6px","13.3px","18.5px"],
         position: 'relative',
         [maxHeightbpSmall]: {
           fontSize:"8px",
