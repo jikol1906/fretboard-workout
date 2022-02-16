@@ -36,10 +36,10 @@ const Fretboard: React.FunctionComponent = (props) => {
     <Box
       sx={{
         alignSelf:"end",
-        fontSize:["5px","7.2px","10.6px","13.3px","18.5px"],
+        fontSize:["4.5px","7.2px","10.6px","13.3px","18.5px"],
         position: 'relative',
         [maxHeightbpSmall]: {
-          fontSize:"8px",
+          fontSize:["6.5px",null,"9.3px"],
         }
       }}
       style={styles}
