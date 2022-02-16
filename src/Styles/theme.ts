@@ -48,7 +48,7 @@ import { maxHeightbpSmall } from './maxHeightMqs'
           fontFamily: 'main',
           textTransform:'uppercase',
           letterSpacing:2,
-          fontSize:["1.6rem",null,"2.8rem"],
+          fontSize:["1.3rem",null,"2.8rem"],
           width: "auto"
         },
       },
