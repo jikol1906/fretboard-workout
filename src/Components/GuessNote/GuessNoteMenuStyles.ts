@@ -19,7 +19,6 @@ export const menuContainerStyles: ThemeUIStyleObject = {
   margin:'0 auto',
   alignContent: "center",
   alignItems: "center",
-  justifyItems: "center",
   gap: ["1.9rem",null,'5rem'],
 };
 
