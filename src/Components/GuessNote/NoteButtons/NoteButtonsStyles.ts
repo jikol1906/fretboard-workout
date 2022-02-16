@@ -6,7 +6,7 @@ export const noteButtonGridStyles: ThemeUIStyleObject = {
   gridTemplateColumns: ["1fr auto 1fr",null,null,'repeat(4,1fr)'],
   gridTemplateRows: ["1fr auto 1fr",null,null,"auto"],
   alignSelf:[null,null,null,"center"],
-  borderRadius:'10px',
+  borderRadius:[null,null,null,"999px"],
   gridTemplateAreas: [`
         'b1 l b2'
         'l2s l l2e'
