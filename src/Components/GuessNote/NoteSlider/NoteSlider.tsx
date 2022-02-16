@@ -55,7 +55,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
 
   useEffect(() => {
     sliderRef.current?.focus();
-  }, [sliderRef]);
+  });
 
   useEffect(() => {
     if (pointers[0]) {
