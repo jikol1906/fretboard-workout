@@ -8,7 +8,7 @@ export interface AppState {
   gameStarted:boolean,
   practiceMode:boolean,
   hideCircles:boolean,
-  fretboardRotation:number;
+  fretboardRotationX:number;
   pointers: FretboardPosition[];
   wrongClickedCrosses: FretboardPosition[]; 
   correctAnswer:string;
@@ -26,7 +26,7 @@ const initialState: AppState = {
   gameStarted:false,
   hideCircles:false,
   practiceMode:false,
-  fretboardRotation:0,
+  fretboardRotationX:0,
   pointers: [],
   wrongClickedCrosses:[],
   correctAnswer:"",
@@ -47,8 +47,8 @@ export const guessNoteSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    setFretboardRotation(state,action: PayloadAction<number>) {
-      state.fretboardRotation = action.payload
+    setFretboardRotationX(state,action: PayloadAction<number>) {
+      state.fretboardRotationX = action.payload
     },
     setHideFretboardCircles(state,action: PayloadAction<boolean>) {
       state.hideCircles = action.payload
@@ -95,7 +95,7 @@ export const guessNoteSlice = createSlice({
 });
 
 export const {
-  setFretboardRotation,
+  setFretboardRotationX,
   setHideFretboardCircles,
   setPointers,
   setGameStarted,
@@ -115,7 +115,7 @@ export const {
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectHideFretboardCircles = (state: RootState) => state.app.hideCircles;
 export const selectPracticeMode = (state: RootState) => state.app.practiceMode;
-export const selectFretboardRotation = (state: RootState) => state.app.fretboardRotation;
+export const selectFretboardRotationX = (state: RootState) => state.app.fretboardRotationX;
 export const selectPointers = (state: RootState) => state.app.pointers;
 export const selectWrongClickedCrosses = (state: RootState) => state.app.wrongClickedCrosses;
 export const selectGameStarted = (state: RootState) => state.app.gameStarted;

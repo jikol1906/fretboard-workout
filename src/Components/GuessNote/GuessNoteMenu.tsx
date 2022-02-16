@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 import { Button, Grid, Label, Slider } from "theme-ui";
 import {
-  selectFretboardRotation,
+  selectFretboardRotationX,
   selectHideFretboardCircles,
   selectPracticeMode,
-  setFretboardRotation,
+  setFretboardRotationX,
   setGameStarted,
   setHideFretboardCircles,
   setPracticemode,
@@ -19,7 +19,7 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
   const dispatch = useDispatch();
   const isPracticeMode = useAppSelector(selectPracticeMode);
   const circlesHidden = useAppSelector(selectHideFretboardCircles);
-  const rotation = useAppSelector(selectFretboardRotation);
+  const rotation = useAppSelector(selectFretboardRotationX);
   return (
     <Grid sx={menuContainerStyles}>
       <Button
@@ -48,7 +48,7 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
         <Label htmlFor="sliderx">Rotation X</Label>
         <Slider
           value={rotation}
-          onChange={(e) => dispatch(setFretboardRotation(+e.target.value))}
+          onChange={(e) => dispatch(setFretboardRotationX(+e.target.value))}
           min="0"
           max="70"
           margin="1rem 0"

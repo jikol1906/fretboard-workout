@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Box } from "theme-ui";
 import {
-  selectFretboardRotation,
+  selectFretboardRotationX,
   selectPointers,
   selectWrongClickedCrosses,
 } from "../../redux/guessNoteSlice";
@@ -12,7 +12,7 @@ import FretboardSvg from "./FretboardSvg";
 import { fretboardElementContainerStyles, pointerStyles } from "./PointerStyles";
 
 const Fretboard: React.FunctionComponent = (props) => {
-  const rotation = useAppSelector(selectFretboardRotation);
+  const rotation = useAppSelector(selectFretboardRotationX);
   const pointersRedux = useAppSelector(selectPointers);
   const wrongClickedCrossesRedux = useAppSelector(selectWrongClickedCrosses);
 
