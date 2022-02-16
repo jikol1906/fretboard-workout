@@ -49,7 +49,10 @@ import { maxHeightbpSmall } from './maxHeightMqs'
           textTransform:'uppercase',
           letterSpacing:2,
           fontSize:["1.3rem",null,"2.8rem"],
-          width: "auto"
+          width: "auto",
+          [maxHeightbpSmall]: {
+            fontSize:["1.3rem",null,"1.5rem"],
+          }
         },
       },
       grids: {
