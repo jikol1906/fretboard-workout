@@ -44,16 +44,26 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
           onChange={(e) => dispatch(setHideFretboardCircles(e.target.checked))}
         />
       </Grid>
-      <Grid sx={inputContainer} style={{ gridArea: "fretboard-rotation" }}>
-        <Label htmlFor="slider">Fretboard Rotation</Label>
+      <Grid sx={inputContainer} style={{ gridArea: "fretboard-rotation-x" }}>
+        <Label htmlFor="sliderx">Rotation X</Label>
         <Slider
-          sx={{ width: "50%" }}
           value={rotation}
           onChange={(e) => dispatch(setFretboardRotation(+e.target.value))}
           min="0"
           max="70"
           margin="1rem 0"
-          id="slider"
+          id="sliderx"
+        />
+      </Grid>
+      <Grid sx={inputContainer} style={{ gridArea: "fretboard-rotation-y" }}>
+        <Label htmlFor="slidery">Rotation Y</Label>
+        <Slider
+          // value={rotation}
+          // onChange={(e) => dispatch(setFretboardRotation(+e.target.value))}
+          min="0"
+          max="10"
+          margin="1rem 0"
+          id="slidery"
         />
       </Grid>
     </Grid>
