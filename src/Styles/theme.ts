@@ -10,7 +10,7 @@ import { maxHeightbpSmall } from './maxHeightMqs'
     
     export const theme: Theme = {
       fonts: {
-        main:"'Sriracha', cursive, sans-serif",
+        main:"'Sriracha', sans-serif",
       },
       colors: {
         text: "#715450",
