@@ -15,7 +15,7 @@ export const menuContainerStyles: ThemeUIStyleObject = {
     `,
   ],
   gridTemplateColumns:[null,null,null,"1fr auto 1fr"],
-  maxWidth:'100rem',
+  maxWidth:'110rem',
   margin:'0 auto',
   alignContent: "center",
   alignItems: "center",
