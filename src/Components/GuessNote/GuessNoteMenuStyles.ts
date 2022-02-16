@@ -11,8 +11,8 @@ export const menuContainerStyles: ThemeUIStyleObject = {
     null,
     null,
     `
-      'start-button       practice-mode fretboard-rotation-x'
-      'start-button       hide-circles fretboard-rotation-y'
+      'practice-mode start-button  fretboard-rotation-x'
+      'hide-circles start-button  fretboard-rotation-y'
     `
   ],
   gridTemplateColumns:[null,null,null,"1fr auto 1fr"],
@@ -22,9 +22,9 @@ export const menuContainerStyles: ThemeUIStyleObject = {
   alignItems: "center",
   gap: ["1.9rem",null,'5rem'],
   [maxHeightbpSmall]: {
-    gridTemplateAreas:        `
-    'start-button       practice-mode fretboard-rotation-x'
-    'start-button       hide-circles fretboard-rotation-y'
+    gridTemplateAreas:`
+    'practice-mode start-button  fretboard-rotation-x'
+    'hide-circles start-button  fretboard-rotation-y'
   `
   }
 };
