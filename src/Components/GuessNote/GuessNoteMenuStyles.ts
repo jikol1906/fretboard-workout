@@ -20,7 +20,7 @@ export const menuContainerStyles: ThemeUIStyleObject = {
   alignContent: "center",
   alignItems: "center",
   justifyItems: "center",
-  gap: "3",
+  gap: ["1.9rem",null,'5rem'],
 };
 
 export const inputContainer: ThemeUIStyleObject = {
