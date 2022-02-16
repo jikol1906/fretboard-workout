@@ -24,7 +24,7 @@ import { maxHeightbpSmall } from './maxHeightMqs'
           ...textBaseStyle,
           fontSize:['1.1rem',"1.5rem","2.3rem"],
           [maxHeightbpSmall]: {
-            fontSize:'1rem'
+            fontSize:'1.3rem'
           }
         },
         stat: {
