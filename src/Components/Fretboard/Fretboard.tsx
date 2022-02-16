@@ -12,7 +12,7 @@ import FretboardSvg from "./FretboardSvg";
 import { fretboardElementContainerStyles, pointerStyles } from "./PointerStyles";
 
 const Fretboard: React.FunctionComponent = (props) => {
-  const rotation = useAppSelector(selectFretboardRotationX);
+  const rotationX = useAppSelector(selectFretboardRotationX);
   const pointersRedux = useAppSelector(selectPointers);
   const wrongClickedCrossesRedux = useAppSelector(selectWrongClickedCrosses);
 
@@ -30,7 +30,7 @@ const Fretboard: React.FunctionComponent = (props) => {
     </Box>
   }) 
 
-  const styles = { "--rotation": rotation } as React.CSSProperties;
+  const styles = { "--rotationX": rotationX } as React.CSSProperties;
 
   return (
     <Box
@@ -50,7 +50,7 @@ const Fretboard: React.FunctionComponent = (props) => {
           margin: "0 auto",
           width:'67.5em',
           position: "relative",
-          transform: "perspective(650px) translateZ(calc(-1 * var(--rotation) * .15em)) rotateX(calc(var(--rotation) * 1deg))",
+          transform: "perspective(650px) translateZ(calc(-1 * var(--rotationX) * .15em)) rotateX(calc(var(--rotationX) * 1deg))",
         }}
       >
         <FretboardSvg/>
