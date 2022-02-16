@@ -55,8 +55,7 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
           id="sliderx"
         />
       </Grid>
-      <Grid sx={inputContainer} style={{ gridArea: "fretboard-rotation-y" }}>
-        <Label htmlFor="slidery">Rotation Y</Label>
+      <Grid sx={inputContainer} style={{ gridArea: "fretboard-rotation-center" }}>
         <Slider
           // value={rotation}
           // onChange={(e) => dispatch(setFretboardRotation(+e.target.value))}
