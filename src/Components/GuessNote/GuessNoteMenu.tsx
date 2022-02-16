@@ -23,7 +23,7 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
   return (
     <Grid sx={menuContainerStyles}>
       <Button
-        style={{ gridArea: "start-button" }}
+        style={{ gridArea: "start-button", justifySelf:"center" }}
         onClick={(e) => dispatch(setGameStarted(true))}
       >
         Start
