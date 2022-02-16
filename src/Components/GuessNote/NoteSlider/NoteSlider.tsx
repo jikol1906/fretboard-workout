@@ -5,6 +5,7 @@ import { Button, Grid, Slider, Text } from "theme-ui";
 import { incrementCorrectAnswered, incrementTotalAnswered, selectCorrectAnswer, selectFindNodeCorrectFret, selectFindNodeString, selectPointers, selectWrongClickedCrosses, setPointers, setWrongClickedCrosses } from "../../../redux/guessNoteSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import AccidentalNote from "../../AccidentalNote/AccidentalNote";
+import useEventListener from "../../Hooks/useEventListener";
 
 interface INoteSliderProps {}
 
@@ -32,6 +33,12 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
   const stringNumber = useAppSelector(selectFindNodeString);
   const wrongClickedCrossesRedux = useAppSelector(selectWrongClickedCrosses);
 
+  useEventListener("keyup",e => {
+    if(e.key === 'Enter') {
+      buttonClicked() 
+    }
+  })
+
   const buttonClicked = useCallback(() => {
     if(pointers[0][0] === correctFret) {
       dispatch(incrementCorrectAnswered())
@@ -48,18 +55,7 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
 
   useEffect(() => {
     sliderRef.current?.focus();
-
-    function handleEnterClicked (event:KeyboardEvent) {
-      if(event.key === 'Enter') {
-        buttonClicked() 
-      }
-    }
-    document.addEventListener("keyup", handleEnterClicked);
-
-    return () => {
-      document.removeEventListener("keyup",handleEnterClicked)
-    }
-  }, [buttonClicked]);
+  }, [sliderRef]);
 
   useEffect(() => {
     if (pointers[0]) {
