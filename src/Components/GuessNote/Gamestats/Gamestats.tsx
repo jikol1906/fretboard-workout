@@ -5,6 +5,7 @@ import { Box, Button, Grid, Heading, Text } from "theme-ui";
 import { selectTotalandCorrectAnswered, setGameStarted } from "../../../redux/guessNoteSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import Modal from "../../Modal/Modal";
+import { container } from "./GamestatsStyles";
 
 interface IGamestatsProps {
     onTryAgainClicked:() => void;
@@ -18,12 +19,7 @@ const Gamestats: React.FunctionComponent<IGamestatsProps> = ({onTryAgainClicked,
   <Modal show={show}>
     <Grid
       gap="3"
-      sx={{
-        height: "100%",
-        gridTemplateRows: "auto 1fr auto",
-        bg: "background",
-        p: "6rem",
-      }}
+      sx={container}
     >
       <Box sx={{ textAlign: "center" }}>
         <Heading>Results</Heading>
