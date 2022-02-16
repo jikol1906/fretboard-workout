@@ -45,8 +45,16 @@ const NoteSlider: React.FunctionComponent<INoteSliderProps> = (props) => {
       dispatch(incrementTotalAnswered())
       dispatch(setWrongClickedCrosses([])) 
     } else {
-      dispatch(setWrongClickedCrosses([...wrongClickedCrossesRedux,[sliderVal,stringNumber]])) 
-      dispatch(incrementTotalAnswered())
+      const alreadyClicked = wrongClickedCrossesRedux.some(([fret,_]) => {
+        return fret === sliderVal 
+      })
+
+      if(!alreadyClicked) {
+
+        dispatch(setWrongClickedCrosses([...wrongClickedCrossesRedux,[sliderVal,stringNumber]])) 
+        dispatch(incrementTotalAnswered())
+      }
+      
     }
 
     sliderRef.current?.focus();
