@@ -18,13 +18,12 @@ const Gamestats: React.FunctionComponent<IGamestatsProps> = ({onTryAgainClicked,
   return (
   <Modal show={show}>
     <Grid
-      gap="3"
       sx={container}
     >
-      <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ textAlign: "center",gridArea:'header' }}>
         <Heading>Results</Heading>
       </Box>
-      <Grid gap="1" sx={{ alignContent: "center" }}>
+      <Grid gap="1" sx={{ alignContent: "center",gridArea:'stats' }}>
         <Text as="p" sx={{ fontSize: "1.5rem", display: "flex" }}>
           <span style={{ flex: "1" }}>total:</span>
           <span>{total}</span>
@@ -34,7 +33,7 @@ const Gamestats: React.FunctionComponent<IGamestatsProps> = ({onTryAgainClicked,
           <span>{correct}</span>
         </Text>
       </Grid>
-      <Grid gap="2">
+      <Grid gap="2" sx={{gridArea:'btns'}}>
         <Button onClick={(e) => dispatch(setGameStarted(false))}>Main menu</Button>
         <Button onClick={onTryAgainClicked}>try again</Button>
       </Grid>
