@@ -18,7 +18,7 @@ const GuessNote: React.FunctionComponent = () => {
       sx={{
         height: "100%",
         gridTemplateRows: "1fr 1fr",
-        padding: (gameStarted ? "2rem 1rem":"4rem 0"),
+        padding:"2rem 1rem",
         gap: "2",
         [maxHeightbpSmall]: {
           gridTemplateRows: "auto 1fr",

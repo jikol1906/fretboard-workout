@@ -45,7 +45,7 @@ const Fretboard: React.FunctionComponent = (props) => {
         minHeight:'0vw',
         position: 'relative',
         [maxHeightbpSmall]: {
-          fontSize:["6.5px",null,"9.3px"],
+          fontSize:["6.5px",null,"8.3px"],
         }
       }}
       style={styles}

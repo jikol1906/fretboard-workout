@@ -25,7 +25,8 @@ export const menuContainerStyles: ThemeUIStyleObject = {
     gridTemplateAreas:`
     'practice-mode start-button  fretboard-rotation-x'
     'hide-circles start-button  fretboard-rotation-center'
-  `
+  `,
+  gap: "1.9rem",
   }
 };
 

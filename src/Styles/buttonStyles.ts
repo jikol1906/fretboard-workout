@@ -36,6 +36,10 @@ const buttonStyles: ThemeUIStyleObject = {
   fontSize: ["1.7rem", null, "2.5rem"],
   color: "text",
   bg: "transparent",
+  [maxHeightbpSmall]: {
+    fontSize:'1.3rem'
+  }
+
 };
 
 let btnStyles: {[k:string] : any} = {
