@@ -79,6 +79,7 @@ let btnStyles: {[k:string] : any} = {
 
 const goBackBtn : ThemeUIStyleObject = {
   ...btnReset,
+  zIndex:1000,
   position:'fixed',
   width:'2.7rem',
   left:'1.8rem',
