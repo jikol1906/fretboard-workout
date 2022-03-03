@@ -40,7 +40,7 @@ const GuessNoteMenu: React.FunctionComponent<IGuessNoteMenuProps> = (props) => {
         />
       </Grid>
       <Grid sx={inputContainer} style={{ gridArea: "hide-circles" }}>
-        <Label htmlFor="checkbox">hide circles</Label>
+        <Label htmlFor="checkbox">hide markers  </Label>
         <Checkbox
           id="checkbox"
           checked={circlesHidden}
