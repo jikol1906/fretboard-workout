@@ -15,7 +15,7 @@ function Home() {
         <Grid gap={["1", null, "2"]} sx={{ justifyContent: "center" }}>
           <NavLink to="guess-note" sx={btnStyles.primary}>Guess node mode</NavLink>
           <ComingSoon overlayBorderradius="999px">
-            <NavLink to="#" tabIndex={-1} sx={btnStyles.primary}>Find node mode</NavLink>
+            <NavLink to="#" tabIndex={-1} sx={btnStyles.primary}>Find note mode</NavLink>
           </ComingSoon>
         </Grid>
       </Box>
