@@ -13,7 +13,7 @@ function Home() {
       <Box margin="auto">
         <MainHeading>Fretboard Workout</MainHeading>
         <Grid gap={["1", null, "2"]} sx={{ justifyContent: "center" }}>
-          <NavLink to="guess-note" sx={btnStyles.primary}>Guess node mode</NavLink>
+          <NavLink to="guess-note" sx={btnStyles.primary}>Guess note mode</NavLink>
           <ComingSoon overlayBorderradius="999px">
             <NavLink to="#" tabIndex={-1} sx={btnStyles.primary}>Find note mode</NavLink>
           </ComingSoon>
